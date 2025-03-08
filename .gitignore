@@ -75,3 +75,4 @@ crashlytics-build.properties
 /Heartless Maze/Logs
 /Heartless Maze/Temp
 /Heartless Maze/UserSettings
+*.log
