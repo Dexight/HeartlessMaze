@@ -148,15 +148,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db817e46a1666b749b53415de1cbedcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volume: 0
-  selectedMicroId: 0
+  shouldShowDropdown: 1
+  microphoneDropdown: {fileID: 936415450}
   clipDelay: 5
   sampleWindow: 128
   threshold: 0.02
-  microphoneIndicator: {fileID: 1632344984}
+  volume: 0
   isSaving: 0
-  shouldShowDropdown: 1
-  microphoneDropdown: {fileID: 936415450}
+  selectedMicroId: 0
+  microphoneIndicator: {fileID: 1632344984}
   showTimeDelay: {fileID: 1978290310}
 --- !u!4 &38709586
 Transform:
