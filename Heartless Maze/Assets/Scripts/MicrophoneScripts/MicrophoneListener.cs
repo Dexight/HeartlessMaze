@@ -9,12 +9,12 @@ using UnityEditor;
 public class MicrophoneListener : MonoBehaviour
 {
     #region Dropdown GUI 
-    [Header("Dropdown GUI")]
+    [Header("GUI(Optional)")]
     
     [Space]
 
     [Tooltip("Есть ли dropdown на экране. (выставляется вручную)")]
-    public bool shouldShowDropdown = true;
+    public bool dropdownOnScreen = true;
 
     [Tooltip("Dropdown список аудио входов.")]
     public TMP_Dropdown microphoneDropdown;
@@ -32,7 +32,9 @@ public class MicrophoneListener : MonoBehaviour
     public int sampleWindow = 64;
     
     [Tooltip("Порог громкости.")]
-    public float threshold = 0.01f;
+    public float threshold = 0.1f;
+
+    public float sensibility = 100f;
     #endregion
 
     #region Debug
@@ -40,14 +42,14 @@ public class MicrophoneListener : MonoBehaviour
 
     [Space]
 
+    [Tooltip("Выбранный ID микрофона.")]
+    public int selectedMicroId = 0;
+
     [Tooltip("Громкость микрофона.")]
-    public float volume;
+    [ReadOnlyProperty] public float volume;
 
     [Tooltip("Идет ли сохранение файла.")]
     [ReadOnlyProperty] public bool isSaving = false;
-
-    [Tooltip("Выбранный ID микрофона.")]
-    [ReadOnlyProperty] public int selectedMicroId = 0;
 
     [Tooltip("Проверочная линия. (зелёный если голос есть, красный если голоса нет)")]
     public Image microphoneIndicator;
@@ -71,7 +73,7 @@ public class MicrophoneListener : MonoBehaviour
 
         List<string> microphoneDevices = new(Microphone.devices);
 
-        if (shouldShowDropdown)
+        if (dropdownOnScreen)
         {
             if (microphoneDevices.Count > 0)
             {
@@ -80,6 +82,7 @@ public class MicrophoneListener : MonoBehaviour
                 microphoneDropdown.value = selectedMicroId;
                 selectedMicrophone = Microphone.devices[selectedMicroId];
                 Debug.Log("Выбран микрофон: " + selectedMicrophone);
+                
                 microphoneDropdown.RefreshShownValue();
 
                 microphoneDropdown.onValueChanged.AddListener(OnMicrophoneDropdownChanged);
@@ -89,7 +92,11 @@ public class MicrophoneListener : MonoBehaviour
                 microphoneDropdown.AddOptions(new List<string> { "Микрофон не найден" });
             }
         }
-
+        else
+        {
+            selectedMicrophone = Microphone.devices[selectedMicroId];
+            Debug.Log("Выбран микрофон: " + selectedMicrophone);
+        }
         StartMicrophone();
     }
 
@@ -97,14 +104,15 @@ public class MicrophoneListener : MonoBehaviour
     {
         if (microphoneClip == null) return;
 
-        volume = GetVolumeFromMicrophone();
+        volume = GetVolumeFromMicrophone()*sensibility;
 
         if (microphoneIndicator)
             microphoneIndicator.color = volume > threshold ? Color.green : Color.red;
 
-        if (volume > threshold && !isSaving)
+        if (volume >= threshold && !isSaving)
         {
             isSaving = true;
+            Debug.Log("Volume = " + volume);
             StartCoroutine(Listening());
         }
     }
@@ -113,17 +121,22 @@ public class MicrophoneListener : MonoBehaviour
     private float GetVolumeFromMicrophone()
     {
         float[] samples = new float[sampleWindow];
-        int micPosition = Microphone.GetPosition(selectedMicrophone) - sampleWindow;
+
+        int micPosition = Microphone.GetPosition(selectedMicrophone)-sampleWindow;
+
         if (micPosition < 0) return 0;
+
+        //micPosition = (micPosition - sampleWindow + microphoneClip.samples) % microphoneClip.samples;
 
         microphoneClip.GetData(samples, micPosition);
 
-        float sum = 0;
-        for (int i = 0; i < sampleWindow; i++)
+        float loudness = 0;
+        foreach (float sample in samples)
         {
-            sum += Mathf.Abs(samples[i]);
+            loudness += Mathf.Abs(sample);
         }
-        return sum / sampleWindow;
+
+        return loudness/sampleWindow;
     }
 
     IEnumerator Listening()
@@ -132,7 +145,7 @@ public class MicrophoneListener : MonoBehaviour
             showTimeDelay.startTimer();
         }
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(clipDelay);
         SaveAudioClip();
         RestartRecord();
     }
