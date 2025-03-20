@@ -150,9 +150,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropdownOnScreen: 1
   microphoneDropdown: {fileID: 936415450}
-  clipDelay: 3
+  clipDelay: 2
   sampleWindow: 64
-  threshold: 0.9
+  threshold: 1.4
   sensibility: 100
   selectedMicroId: 0
   volume: 0
@@ -881,6 +881,7 @@ MonoBehaviour:
   - {fileID: 315671159}
   - {fileID: 1144069635}
   MicrophoneListener: {fileID: 38709585}
+  bars_threshold: 0.4
 --- !u!1 &775538565
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,7 +26,7 @@ public class MicrophoneListener : MonoBehaviour
     [Space]
 
     [Tooltip("Длина записываемого клипа.")]
-    public int clipDelay = 5;
+    public int clipDelay = 2;
 
     [Tooltip("Количество анализируемых сэмплов.")]
     public int sampleWindow = 64;
@@ -72,6 +72,11 @@ public class MicrophoneListener : MonoBehaviour
             microphoneIndicator.color = Color.red;
 
         List<string> microphoneDevices = new(Microphone.devices);
+
+        //int a;
+        //int b;
+        //Microphone.GetDeviceCaps(microphoneDevices[0], out a, out b);
+        //Debug.Log("Min: " + a + "; Max:" + b);
 
         if (dropdownOnScreen)
         {
@@ -122,11 +127,9 @@ public class MicrophoneListener : MonoBehaviour
     {
         float[] samples = new float[sampleWindow];
 
-        int micPosition = Microphone.GetPosition(selectedMicrophone)-sampleWindow;
+        int micPosition = Microphone.GetPosition(selectedMicrophone) - sampleWindow;
 
         if (micPosition < 0) return 0;
-
-        //micPosition = (micPosition - sampleWindow + microphoneClip.samples) % microphoneClip.samples;
 
         microphoneClip.GetData(samples, micPosition);
 
@@ -187,7 +190,7 @@ public class MicrophoneListener : MonoBehaviour
     {
         if (Microphone.devices.Length > 0)
         {
-            microphoneClip = Microphone.Start(selectedMicrophone, true, clipDelay, 44100);
+            microphoneClip = Microphone.Start(selectedMicrophone, true, clipDelay+1, 44100);
         }
         else
         {

@@ -18,7 +18,8 @@ public class ShowTimeDelay : MonoBehaviour
         if (showTime)
         {
             timeRemaining -= Time.deltaTime;
-            DisplayTime(timeRemaining);
+            if (timeRemaining >= 0 )
+                DisplayTime(timeRemaining);
         }
     }
 
