@@ -37,8 +37,8 @@ public class MicrophoneListener : MonoBehaviour
     public float sensibility = 100f;
     #endregion
 
-    #region Debug
-    [Header("Debug")]
+    #region Optional
+    [Header("Optional")]
 
     [Space]
 
@@ -55,19 +55,18 @@ public class MicrophoneListener : MonoBehaviour
     public Image microphoneIndicator;
 
     [Tooltip("Скрипт ShowTimeDelay")]
-    public ShowTimeDelay showTimeDelay; // потом - совместить ShowTimeDelay и MicrophoneListener скрипты
+    public ShowTimeDelay showTimeDelay;
     #endregion
 
     private string selectedMicrophone;
     private AudioClip microphoneClip;
     private string tempPath;
     private int audioCounter = 0;
-    //[ReadOnlyProperty] public AudioTranscriber audioTranscriber;
     [ReadOnlyProperty] public Client client;
+    public WaitCircle waitCircle;
 
     void Start()
     {
-        //audioTranscriber = GetComponent<AudioTranscriber>();
         client = GetComponent<Client>();
         tempPath = Path.Combine(Application.persistentDataPath, "Audio");
         Debug.Log("Путь к аудио: " + tempPath);
@@ -113,7 +112,7 @@ public class MicrophoneListener : MonoBehaviour
         if (microphoneIndicator)
             microphoneIndicator.color = volume > threshold ? Color.green : Color.red;
 
-        if (volume >= threshold && !isSaving && client.canSend)
+        if (volume >= threshold && !isSaving && client.canSend && (waitCircle? !waitCircle.isWorked : true))
         {
             isSaving = true;
             Debug.Log("Volume = " + volume);
@@ -157,8 +156,7 @@ public class MicrophoneListener : MonoBehaviour
         ++audioCounter;
         string filePath = Path.Combine(tempPath, "record" + audioCounter + ".wav");
         SavWav.Save(filePath, microphoneClip);
-        //audioTranscriber.ProcessAudio("record"+audioCounter+".wav");
-        client.SendAudioPathToPython(filePath + "record" + audioCounter + ".wav");
+        client.SendAudioPathToPython(filePath);
     }
 
     void RestartRecord()

@@ -7,14 +7,14 @@ public class Server : MonoBehaviour
     private Process _serverProcess;
     private Client client;
     private bool serverReadyFlag = false;
-    //string modelPath = Path.Combine(Application.streamingAssetsPath, "model.onnx");
-    //string vocabPath = Path.Combine(Application.streamingAssetsPath, "vocab.json");
+    string modelPath = $"{Application.streamingAssetsPath}/model.onnx";
+    string vocabPath = $"{Application.streamingAssetsPath}/vocab.json";
 
     void Start()
     {
         client = GetComponent<Client>();
         //string exePath = Path.Combine(Application.streamingAssetsPath, "model_script.exe");
-        string exePath = Path.Combine(Application.streamingAssetsPath, "test_server.exe");
+        string exePath = $"{Application.streamingAssetsPath}/test_server.exe";
 
         // Проверка существования файла
         if (!File.Exists(exePath))
@@ -22,13 +22,11 @@ public class Server : MonoBehaviour
             UnityEngine.Debug.LogError($"Server file not found: {exePath}");
             return;
         }
-
-        //UnityEngine.Debug.Log(modelPath);
         
         ProcessStartInfo startInfo = new ProcessStartInfo
         {
             FileName = exePath,
-            //Arguments = modelPath + " " + vocabPath,
+            Arguments = modelPath + " " + vocabPath,
             UseShellExecute = false,
             CreateNoWindow = true,
             RedirectStandardOutput = true,
@@ -47,13 +45,13 @@ public class Server : MonoBehaviour
         };
         _serverProcess.ErrorDataReceived += (sender, args) => UnityEngine.Debug.LogError($"Server (error): {args.Data}");
 
-        InvokeRepeating(nameof(CheckServerStatus), 1f, 1f);
+        InvokeRepeating(nameof(CheckServerStatus), 1f, 1f);// Вызывает функцию каждую секунду (в моём случае пока сервер не поднимется)
     }
     void CheckServerStatus()
     {
         if (serverReadyFlag)
         {
-            UnityEngine.Debug.Log("Сервер запущен");
+            UnityEngine.Debug.Log($"Сервер запущен. PID = {_serverProcess.Id}");
             CancelInvoke(nameof(CheckServerStatus)); // Останавливаем проверку
             client.ConnectToPythonServer();
         }
@@ -61,11 +59,5 @@ public class Server : MonoBehaviour
         {
             UnityEngine.Debug.Log("Waiting to start server");
         }
-    }
-    void OnApplicationQuit()
-    {
-        // Убиваем процесс сервера
-        if (_serverProcess != null && !_serverProcess.HasExited)
-            _serverProcess.Kill();
     }
 }

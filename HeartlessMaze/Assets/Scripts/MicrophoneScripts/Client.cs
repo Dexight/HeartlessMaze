@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
+using System.Collections;
 
 public class Client : MonoBehaviour
 {
@@ -9,12 +10,34 @@ public class Client : MonoBehaviour
     private TcpClient client;
     private NetworkStream stream;
     private Thread receiveThread;
+    private string receivedData = "";
+    private bool hasNewData = false;
 
     public bool canSend = false;
 
+    [Tooltip("Другое")]
+    public WaitCircle waitCircle;
+
+    private CancellationTokenSource cts = new CancellationTokenSource();
     void Start()
     {
-        //ConnectToPythonServer(); // Подключение к серверу
+    }
+
+    private void Update()
+    {
+        if (hasNewData)
+        {
+            string dataToProcess;
+            lock (this)
+            {
+                dataToProcess = receivedData;
+                hasNewData = false;
+            }
+
+            UnityEngine.Debug.Log($"Получен результат: {dataToProcess}");
+            if (waitCircle)
+                waitCircle.stopWaitCircle();
+        }
     }
 
     public void ConnectToPythonServer()
@@ -48,6 +71,8 @@ public class Client : MonoBehaviour
             byte[] bytes = Encoding.UTF8.GetBytes(data);
             stream.Write(bytes, 0, bytes.Length);
             UnityEngine.Debug.Log($"Отправлены данные: {data}");
+            if (waitCircle)
+                waitCircle.startWaitCircle();
         }
         catch (System.Exception e)
         {
@@ -58,7 +83,7 @@ public class Client : MonoBehaviour
     void ReceiveData()
     {
         byte[] buffer = new byte[1024];
-        while (true)
+        while (!cts.Token.IsCancellationRequested)
         {
             try
             {
@@ -66,22 +91,29 @@ public class Client : MonoBehaviour
                 if (bytesRead > 0)
                 {
                     string result = Encoding.UTF8.GetString(buffer, 0, bytesRead);
-                    UnityEngine.Debug.Log($"Получен результат: {result}");
+                    lock (this) // Блокировка для потокобезопасности
+                    {
+                        receivedData = result;
+                        hasNewData = true;
+                    }
                 }
+            }
+            catch (ThreadAbortException)
+            {
+                Debug.Log("Поток был принудительно прерван.");
             }
             catch (System.Exception e)
             {
                 UnityEngine.Debug.LogError($"Ошибка получения данных: {e}");
                 break;
             }
+            
         }
     }
 
     void OnApplicationQuit()
     {
-        // Закрытие соединения при завершении
-        stream?.Close();
-        client?.Close();
-        receiveThread?.Abort();
+        SendAudioPathToPython("stop");
+        UnityEngine.Debug.Log("Работа приложения завершена.");
     }
 }
