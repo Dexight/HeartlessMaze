@@ -40,10 +40,14 @@ public class Server : MonoBehaviour
         _serverProcess.BeginOutputReadLine();
         _serverProcess.BeginErrorReadLine();
         _serverProcess.OutputDataReceived += (sender, args) => { 
-            UnityEngine.Debug.Log($"Server: {args.Data}");
+            if (args.Data != null)
+                UnityEngine.Debug.Log($"Server: {args.Data}");
             if (args.Data == "...py-server ready...") serverReadyFlag = true;  
         };
-        _serverProcess.ErrorDataReceived += (sender, args) => UnityEngine.Debug.LogError($"Server (error): {args.Data}");
+        _serverProcess.ErrorDataReceived += (sender, args) => {
+            if (args.Data != null)
+                UnityEngine.Debug.LogError($"Server (error): {args.Data}");
+            };
 
         InvokeRepeating(nameof(CheckServerStatus), 1f, 1f);// Вызывает функцию каждую секунду (в моём случае пока сервер не поднимется)
     }

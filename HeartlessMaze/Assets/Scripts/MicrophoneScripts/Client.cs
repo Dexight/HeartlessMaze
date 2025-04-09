@@ -2,7 +2,6 @@ using UnityEngine;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
-using System.Collections;
 
 public class Client : MonoBehaviour
 {
@@ -114,6 +113,32 @@ public class Client : MonoBehaviour
     void OnApplicationQuit()
     {
         SendAudioPathToPython("stop");
+        try {
+            cts.Cancel(); // Отменяем выполнение потока
+            if (receiveThread != null && receiveThread.IsAlive)
+            {
+                receiveThread.Join(1000); // Даем потоку 1 секунду на завершение
+                if (receiveThread.IsAlive)
+                    receiveThread.Abort(); // Если поток не завершился, прерываем его
+            }
+
+            if (stream != null)
+            {
+                stream.Close();
+                stream.Dispose();
+            }
+
+            if (client != null)
+            {
+                client.Close();
+            }
+
+            UnityEngine.Debug.Log("Ресурсы клиента освобождены (корректно)");
+        }
+        catch (System.Exception e)
+        {
+            UnityEngine.Debug.LogError($"Ошибка при освобождении ресурсов клиента: {e}");
+        }
         UnityEngine.Debug.Log("Работа приложения завершена.");
     }
 }
