@@ -19,16 +19,19 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Vector2 checkSizeUpDown; //размер чекеров
 
     [SerializeField] LayerMask wallLayer;
-    
+
     private bool _canGoLeft;
     private bool _canGoUp;
     private bool _canGoRight;
     private bool _canGoDown;
     #endregion
 
+    Animator anim;
+
     void Start()
     {
         targetPosition = transform.position;
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -47,30 +50,22 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W) && _canGoUp)
         {
-            targetPosition += Vector2.up;
-            _canMove = false;
-            return;
+            goUp();
         }
 
         if (Input.GetKeyDown(KeyCode.A) && _canGoLeft)
         {
-            targetPosition += Vector2.left;
-            _canMove = false;
-            return;
+            goLeft();
         }
 
         if (Input.GetKeyDown(KeyCode.S) && _canGoDown)
         {
-            targetPosition += Vector2.down;
-            _canMove = false;
-            return;
+            goDown();
         }
 
         if (Input.GetKeyDown(KeyCode.D) && _canGoRight)
         {
-            targetPosition += Vector2.right;
-            _canMove = false;
-            return;
+            goRight();
         }
     }
 
@@ -95,5 +90,37 @@ public class PlayerMovement : MonoBehaviour
 
         Gizmos.color = _canGoDown ? Color.green : Color.red;
         Gizmos.DrawWireCube(downChecker.position, checkSizeUpDown);
+    }
+
+    public void goUp()
+    {
+        targetPosition += Vector2.up;
+        _canMove = false;
+        anim.SetTrigger("Up");
+        return;
+    }
+
+    public void goDown()
+    {
+        targetPosition += Vector2.down;
+        _canMove = false;
+        anim.SetTrigger("Down");
+        return;
+    }
+
+    public void goLeft()
+    {
+        targetPosition += Vector2.left;
+        _canMove = false;
+        anim.SetTrigger("Left");
+        return;
+    }
+
+    public void goRight()
+    {
+        targetPosition += Vector2.right;
+        _canMove = false;
+        anim.SetTrigger("Right");
+        return;
     }
 }

@@ -18,6 +18,9 @@ public class Client : MonoBehaviour
     public WaitCircle waitCircle;
 
     private CancellationTokenSource cts = new CancellationTokenSource();
+
+    [SerializeField] private CommandManager commandManager; 
+    
     void Start()
     {
     }
@@ -34,6 +37,7 @@ public class Client : MonoBehaviour
             }
 
             UnityEngine.Debug.Log($"Получен результат: {dataToProcess}");
+            commandManager.procedureText(dataToProcess);
             if (waitCircle)
                 waitCircle.stopWaitCircle();
         }
