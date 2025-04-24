@@ -7,6 +7,7 @@ import json
 import torch
 import re
 import numpy as np
+import os
 
 model_path = sys.argv[1]  # Путь к модели
 vocab_path = sys.argv[2]  # Путь к словарю токенов
@@ -29,6 +30,11 @@ def handle_client(client_socket):
             else:
                 try:
                     result = transcribe_audio_onnx(data)# распознавание
+
+                    # удаление аудиофайла
+                    if os.path.exists(data):
+                        os.remove(data)
+                    
                     client_socket.send(result.encode('utf-8'))# Отправка результата обратно в Unity
                 except (ConnectionResetError, BrokenPipeError, ConnectionError) as e:
                     print(f"Client disconnected: {e}", flush=True)
@@ -104,6 +110,7 @@ def prepare_input(audio_path):
 def transcribe_audio_onnx(audio_path):
     inputs = prepare_input(audio_path)
     
+
     ort_inputs = {ort_session.get_inputs()[0].name: inputs}
     ort_outs = ort_session.run(None, ort_inputs)
     
