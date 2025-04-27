@@ -48,22 +48,22 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
-        if (Input.GetKeyDown(KeyCode.W) && _canGoUp)
+        if (Input.GetKeyDown(KeyCode.W))
         {
             goUp();
         }
 
-        if (Input.GetKeyDown(KeyCode.A) && _canGoLeft)
+        if (Input.GetKeyDown(KeyCode.A))
         {
             goLeft();
         }
 
-        if (Input.GetKeyDown(KeyCode.S) && _canGoDown)
+        if (Input.GetKeyDown(KeyCode.S))
         {
             goDown();
         }
 
-        if (Input.GetKeyDown(KeyCode.D) && _canGoRight)
+       if (Input.GetKeyDown(KeyCode.D))
         {
             goRight();
         }
@@ -94,33 +94,65 @@ public class PlayerMovement : MonoBehaviour
 
     public void goUp()
     {
-        targetPosition += Vector2.up;
-        _canMove = false;
-        anim.SetTrigger("Up");
-        return;
+        if (_canGoUp)
+        {
+            targetPosition += Vector2.up;
+            _canMove = false;
+            anim.SetTrigger("Up");
+            return;
+        }
+        else
+        {
+            //TODO
+            Debug.Log("Вверх идти нельзя");
+        }
     }
 
     public void goDown()
     {
-        targetPosition += Vector2.down;
-        _canMove = false;
-        anim.SetTrigger("Down");
-        return;
+        if (_canGoDown)
+        {
+            targetPosition += Vector2.down;
+            _canMove = false;
+            anim.SetTrigger("Down");
+            return;
+        }
+        else
+        {
+            //TODO
+            Debug.Log("Вниз идти нельзя");
+        }
     }
 
     public void goLeft()
     {
-        targetPosition += Vector2.left;
-        _canMove = false;
-        anim.SetTrigger("Left");
-        return;
+        if (_canGoLeft)
+        {
+            targetPosition += Vector2.left;
+            _canMove = false;
+            anim.SetTrigger("Left");
+            return;
+        }
+        else
+        {
+            //TODO
+            Debug.Log("Влево идти нельзя");
+        }
     }
 
     public void goRight()
     {
-        targetPosition += Vector2.right;
-        _canMove = false;
-        anim.SetTrigger("Right");
-        return;
+        if (_canGoRight)
+        {
+            targetPosition += Vector2.right;
+            _canMove = false;
+            anim.SetTrigger("Right");
+            return;
+        }
+        else
+        {
+            //TODO
+            Debug.Log("Вправо идти нельзя");
+        }
     }
 }
