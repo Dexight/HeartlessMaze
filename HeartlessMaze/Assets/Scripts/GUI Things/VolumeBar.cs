@@ -7,17 +7,18 @@ public class VolumeBar : MonoBehaviour
 {
     public List<Image> volumeBarImages;
 
-    [SerializeField] private MicrophoneListener MicrophoneListener;
+    [ReadOnlyProperty][SerializeField] private MicrophoneListener microphoneListener;
 
     [UnityEngine.Range(0, 1)] public float bars_threshold;
     
     void Start()
     {
+        microphoneListener = MicrophoneListener.Instance;
     }
 
     void Update()
     {
-        float volume = MicrophoneListener.volume;
+        float volume = microphoneListener.volume;
         foreach (Image barImage in volumeBarImages)
         {
             // Изменение шкалы
@@ -26,11 +27,11 @@ public class VolumeBar : MonoBehaviour
             else barImage.fillAmount = volume = 0;
             
             // Изменение цвета
-            if (volume >= MicrophoneListener.threshold)
+            if (volume >= microphoneListener.threshold)
             {
                 barImage.color = Color.red;
             }
-            else if (volume >= MicrophoneListener.threshold / 2)
+            else if (volume >= microphoneListener.threshold / 2)
             {
                 barImage.color = new Color(255, 123, 0);
             }

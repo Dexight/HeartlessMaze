@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 53859511973365572}
   m_Layer: 0
   m_Name: AudioController
-  m_TagString: Untagged
+  m_TagString: AudioController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db817e46a1666b749b53415de1cbedcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropdownOnScreen: 1
+  dropdownOnScreen: 0
   microphoneDropdown: {fileID: 0}
   clipDelay: 2
   sampleWindow: 64
@@ -72,6 +72,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSend: 0
+  commandManager: {fileID: 0}
   waitCircle: {fileID: 0}
 --- !u!114 &53859511973365572
 MonoBehaviour:
@@ -85,3 +86,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d8404ac78f4a8b4db18036a4f552aef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serverReadyFlag: 0

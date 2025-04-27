@@ -17,7 +17,7 @@ public class MicrophoneListener : MonoBehaviour
     public bool dropdownOnScreen = true;
 
     [Tooltip("Dropdown список аудио входов.")]
-    public TMP_Dropdown microphoneDropdown;
+    [ReadOnlyProperty][SerializeField] private TMP_Dropdown microphoneDropdown;
     #endregion
 
     #region Options
@@ -25,7 +25,7 @@ public class MicrophoneListener : MonoBehaviour
 
     [Space]
 
-    [Tooltip("Длина записываемого клипа.")]
+    [Tooltip("Длина записываемого клипа в секундах.")]
     public int clipDelay = 2;
 
     [Tooltip("Количество анализируемых сэмплов.")]
@@ -52,23 +52,40 @@ public class MicrophoneListener : MonoBehaviour
     [ReadOnlyProperty] public bool isSaving = false;
 
     [Tooltip("Проверочная линия. (зелёный если голос есть, красный если голоса нет)")]
-    public Image microphoneIndicator;
+    [ReadOnlyProperty][SerializeField] private Image microphoneIndicator;
 
     [Tooltip("Скрипт ShowTimeDelay")]
-    public ShowTimeDelay showTimeDelay;
+    [ReadOnlyProperty][SerializeField] private ShowTimeDelay showTimeDelay;
+
+    public static MicrophoneListener Instance { get; private set; } // Статическая ссылка на единственный экземпляр (для синглтона)
     #endregion
 
     private string selectedMicrophone;
     private AudioClip microphoneClip;
     private string tempPath;
     private int audioCounter = 0;
-    [ReadOnlyProperty] public Client client;
-    public WaitCircle waitCircle;
+    [ReadOnlyProperty][SerializeField] private Client client;
+    [ReadOnlyProperty][SerializeField] private WaitCircle waitCircle;
+
+    private void Awake()
+    {
+        // Если экземпляр уже существует и это не текущий объект, уничтожаем его
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject); // сохраняем между сценами
+        }
+    }
 
     void Start()
     {
         client = GetComponent<Client>();
         tempPath = Path.Combine(Application.persistentDataPath, "Audio");
+        Directory.CreateDirectory(tempPath); // Создаст папку, если её нет
         Debug.Log("Путь к аудио: " + tempPath);
 
         if (microphoneIndicator)
@@ -153,7 +170,7 @@ public class MicrophoneListener : MonoBehaviour
 
     void SaveAudioClip()
     {
-        ++audioCounter;
+        audioCounter = audioCounter < 100? ++audioCounter : 0;
         string filePath = Path.Combine(tempPath, "record" + audioCounter + ".wav");
         SavWav.Save(filePath, microphoneClip);
         client.SendAudioPathToPython(filePath);
@@ -195,6 +212,31 @@ public class MicrophoneListener : MonoBehaviour
         {
             Debug.LogError("Микрофоны не найдены.");
         }
+    }
+
+    public void setDropdown(TMP_Dropdown dropdown)
+    {
+        microphoneDropdown = dropdown;
+    }
+
+    public void setClient(Client c)
+    {
+        client = c;
+    }
+
+    public void setShowTimeDelay(ShowTimeDelay std)
+    {
+        showTimeDelay = std;
+    }
+
+    public void setWaitCircle(WaitCircle wc)
+    {
+        waitCircle = wc;
+    }
+
+    public void setIndicator(Image img)
+    {
+        microphoneIndicator = img;
     }
 
     void OnDestroy()

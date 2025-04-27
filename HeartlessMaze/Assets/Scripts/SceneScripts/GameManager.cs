@@ -1,18 +1,21 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
-
+    public static GameManager Instance;
+    
+    public string currentScene = "Loading";
+    
     private void Awake()
     {
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
         }
         else
         {
-            if (instance != this)
+            if (Instance != this)
                 Destroy(gameObject);
         }
     }
@@ -22,8 +25,21 @@ public class GameManager : MonoBehaviour
         
     }
 
-    void Update()
+    public void LoadingScene()
     {
-        
+        currentScene = "Loading";
+        SceneManager.LoadScene("Loading");
+    }
+
+    public void MenuScene()
+    {
+        currentScene = "Menu";
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void GameScene()
+    {
+        currentScene = "Game";
+        SceneManager.LoadScene("Game");
     }
 }

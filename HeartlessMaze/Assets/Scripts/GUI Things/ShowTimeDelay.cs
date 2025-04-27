@@ -4,12 +4,15 @@ using UnityEngine;
 public class ShowTimeDelay : MonoBehaviour
 {
     public TMP_Text timer;
-    public MicrophoneListener microphoneListener;
     public float timeRemaining;
 
     public bool showTime;
+
+    [ReadOnlyProperty][SerializeField] private MicrophoneListener microphoneListener;
     void Start()
     {
+        microphoneListener = MicrophoneListener.Instance;
+        microphoneListener.setShowTimeDelay(this);
         stopTimer();
     }
 

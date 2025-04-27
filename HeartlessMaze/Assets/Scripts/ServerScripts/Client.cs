@@ -14,12 +14,10 @@ public class Client : MonoBehaviour
 
     public bool canSend = false;
 
-    [Tooltip("Другое")]
-    public WaitCircle waitCircle;
-
     private CancellationTokenSource cts = new CancellationTokenSource();
 
-    [SerializeField] private CommandManager commandManager; 
+    [ReadOnlyProperty][SerializeField] private CommandManager commandManager;
+    [ReadOnlyProperty][SerializeField] private WaitCircle waitCircle;
     
     void Start()
     {
@@ -144,5 +142,15 @@ public class Client : MonoBehaviour
             UnityEngine.Debug.LogError($"Ошибка при освобождении ресурсов клиента: {e}");
         }
         UnityEngine.Debug.Log("Работа приложения завершена.");
+    }
+
+    public void setCommandManager(CommandManager cm)
+    {
+        commandManager = cm;
+    }
+
+    public void setWaitCircle(WaitCircle wc)
+    {
+        waitCircle = wc;
     }
 }

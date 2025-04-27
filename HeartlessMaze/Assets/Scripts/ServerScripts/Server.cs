@@ -6,7 +6,7 @@ public class Server : MonoBehaviour
 {
     private Process _serverProcess;
     private Client client;
-    private bool serverReadyFlag = false;
+    [ReadOnlyProperty][SerializeField] private bool serverReadyFlag = false;
     string modelPath = $"{Application.streamingAssetsPath}/model.onnx";
     string vocabPath = $"{Application.streamingAssetsPath}/vocab.json";
 
@@ -29,19 +29,20 @@ public class Server : MonoBehaviour
             Arguments = modelPath + " " + vocabPath,
             UseShellExecute = false,
             CreateNoWindow = true,
+            StandardOutputEncoding = System.Text.Encoding.UTF8,
+            StandardErrorEncoding = System.Text.Encoding.UTF8,
             RedirectStandardOutput = true,
             RedirectStandardError = true
         };
 
         // Запуск сервера
-        _serverProcess = new Process { StartInfo = startInfo };
-        _serverProcess.Start();
+        _serverProcess = new Process { StartInfo = startInfo, EnableRaisingEvents = true };
 
-        _serverProcess.BeginOutputReadLine();
-        _serverProcess.BeginErrorReadLine();
-        _serverProcess.OutputDataReceived += (sender, args) => { 
+        _serverProcess.OutputDataReceived += (sender, args) => {
             if (args.Data != null)
+            {
                 UnityEngine.Debug.Log($"Server: {args.Data}");
+            }
             if (args.Data == "...py-server ready...") serverReadyFlag = true;  
         };
         _serverProcess.ErrorDataReceived += (sender, args) => {
@@ -49,13 +50,20 @@ public class Server : MonoBehaviour
                 UnityEngine.Debug.LogError($"Server (error): {args.Data}");
             };
 
-        InvokeRepeating(nameof(CheckServerStatus), 1f, 1f);// Вызывает функцию каждую секунду (в моём случае пока сервер не поднимется)
+        _serverProcess.Start();
+
+        _serverProcess.BeginOutputReadLine();
+        _serverProcess.BeginErrorReadLine();
+
+        InvokeRepeating(nameof(CheckServerStatus), 1f, 5f);// Вызывает функцию каждые 5 секунд (в моём случае пока сервер не поднимется)
     }
-    void CheckServerStatus()
+
+
+    private void CheckServerStatus()
     {
         if (serverReadyFlag)
         {
-            UnityEngine.Debug.Log($"Сервер запущен. PID = {_serverProcess.Id}");
+            UnityEngine.Debug.Log($"Сервер запущен.");
             CancelInvoke(nameof(CheckServerStatus)); // Останавливаем проверку
             client.ConnectToPythonServer();
         }
@@ -63,5 +71,10 @@ public class Server : MonoBehaviour
         {
             UnityEngine.Debug.Log("Waiting to start server");
         }
+    }
+
+    public bool IsServerReady()
+    {
+        return serverReadyFlag;
     }
 }

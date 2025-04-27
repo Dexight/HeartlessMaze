@@ -90,12 +90,16 @@ public class CommandManager : MonoBehaviour
         {
             events[c.eventId].Invoke();
         }
+        else
+        {
+            Debug.Log("Команда не найдена");
+        }
     }
 
-    //void Start()
-    //{
-
-    //}
+    void Start()
+    {
+        MicrophoneListener.Instance.GetComponent<Client>().setCommandManager(this);
+    }
 
     //void Update()
     //{

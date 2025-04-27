@@ -10,12 +10,16 @@ public class WaitCircle : MonoBehaviour
     private float amount = 0.1f;
     private float step = 0.025f;
     public bool isWorked = false;
+
     void Start()
     {
         image = GetComponent<Image>();
         image.fillAmount = amount;
         imageTransform = GetComponent<Transform>();
         image.enabled = false;
+
+        MicrophoneListener.Instance.setWaitCircle(this);
+        MicrophoneListener.Instance.GetComponent<Client>().setWaitCircle(this);
     }
 
     void Update()

@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
     #region Movement
     public float speed;
     private bool _canMove = true;
-    [SerializeField] private Vector2 targetPosition;
+    [ReadOnlyProperty][SerializeField] private Vector2 targetPosition;
     #endregion
 
     #region checkers
