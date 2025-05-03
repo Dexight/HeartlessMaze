@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Text;
 using TMPro;
 using UnityEngine;
@@ -15,11 +16,16 @@ public class LogPanel : MonoBehaviour
     public TMP_Text logText;
     
     [ReadOnlyProperty][SerializeField] private Client client;
-    
+
+    private void Awake()
+    {
+        logText.text = "";
+        Application.logMessageReceived += DisplayLog;
+    }
+
     void Start()
     {
         client = MicrophoneListener.Instance.GetComponent<Client>();
-        logText.text = "";
     }
 
     void Update()
@@ -34,13 +40,12 @@ public class LogPanel : MonoBehaviour
 
     void DisplayLog(string logString, string stackTrace, LogType type)
     {
-        logText.text += logString + '\n';
+        logText.text += logString + "\n\n" + stackTrace + "====================================\n";
     }
 
-    void OnEnable()
-    {
-        Application.logMessageReceived += DisplayLog;
-    }
+    //void OnEnable()
+    //{
+    //}
 
     void OnDisable()
     {

@@ -3509,7 +3509,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4655877778422411580, guid: 101db1914b74e354c9dc03e8f59753fc, type: 3}
       propertyPath: commands.Array.data[0].name
-      value: "\u043F\u0440\u0438\u0432\u0435\u0442"
+      value: "\u043F\u0440\u0438\u0432\u0435"
       objectReference: {fileID: 0}
     - target: {fileID: 4655877778422411580, guid: 101db1914b74e354c9dc03e8f59753fc, type: 3}
       propertyPath: events.Array.data[0].m_PersistentCalls.m_Calls.Array.size

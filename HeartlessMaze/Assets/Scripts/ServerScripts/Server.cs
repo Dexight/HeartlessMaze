@@ -43,7 +43,8 @@ public class Server : MonoBehaviour
             {
                 UnityEngine.Debug.Log($"Server: {args.Data}");
             }
-            if (args.Data == "...py-server ready...") serverReadyFlag = true;  
+            if (args.Data == "...py-server ready...")
+                serverReadyFlag = true;
         };
         _serverProcess.ErrorDataReceived += (sender, args) => {
             if (args.Data != null)
@@ -63,7 +64,7 @@ public class Server : MonoBehaviour
     {
         if (serverReadyFlag)
         {
-            UnityEngine.Debug.Log($"Сервер запущен.");
+            UnityEngine.Debug.Log($"Server was started.");
             CancelInvoke(nameof(CheckServerStatus)); // Останавливаем проверку
             client.ConnectToPythonServer();
         }
