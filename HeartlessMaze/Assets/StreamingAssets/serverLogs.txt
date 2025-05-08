@@ -1,0 +1,33 @@
+==============Unity debug==============
+[2025-05-08 18:51:58] Путь к аудио: C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio
+
+UnityEngine.Debug:Log (object)
+MicrophoneListener:Start () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:84)
+==============Server debug=============
+==============Unity debug==============
+[2025-05-08 18:51:58] Выбран микрофон: Набор микрофонов (Realtek Audio)
+
+UnityEngine.Debug:Log (object)
+MicrophoneListener:Start () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:91)
+==============Server debug=============
+[2025-05-08 18:52:03] Waiting to start server
+[2025-05-08 18:52:08] Waiting to start server
+[2025-05-08 18:52:13] Waiting to start server
+[2025-05-08 18:52:27] Waiting to start server
+[2025-05-08 18:52:30] Server: Model file exists and can be readed
+[2025-05-08 18:52:35] Server: model was loaded succesfuly
+[2025-05-08 18:52:35] Server: Token vocabular file exists and can be readed
+[2025-05-08 18:52:35] Server: model was loaded succesfuly
+[2025-05-08 18:52:35] Server: ...py-server ready...
+==============Unity debug==============
+[2025-05-08 18:53:09] Assets\Scripts\MicrophoneScripts\SavWav.cs(89,14): warning CS0618: 'AudioClip.Create(string, int, int, int, bool, bool)' is obsolete: 'The _3D argument of AudioClip is deprecated. Use the spatialBlend property of AudioSource instead to morph between 2D and 3D playback.'
+
+==============Server debug=============
+==============Unity debug==============
+[2025-05-08 18:53:09] Assets\Scripts\MicrophoneScripts\AudioTranscriber.cs(76,30): warning CS0618: 'WWW' is obsolete: 'Use UnityWebRequest, a fully featured replacement which is more efficient and has additional features'
+
+==============Server debug=============
+==============Unity debug==============
+[2025-05-08 18:53:09] Assets\Scripts\MicrophoneScripts\SavWav.cs(156,10): warning CS0219: The variable 'two' is assigned but its value is never used
+
+==============Server debug=============

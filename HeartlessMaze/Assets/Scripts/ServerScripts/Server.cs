@@ -50,7 +50,7 @@ public class Server : MonoBehaviour
             if (args.Data != null)
             {
                 UnityEngine.Debug.Log($"Server: {args.Data}");
-                File.AppendAllText(logsPath, $"[{System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}] Server: {args.Data}\n");
+                File.AppendAllText(logsPath, $"[{System.DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss")}] Server: {args.Data}\n");
             }
 
             if (args.Data == "...py-server ready...")
@@ -59,7 +59,7 @@ public class Server : MonoBehaviour
         _serverProcess.ErrorDataReceived += (sender, args) => {
             if (args.Data != null)
                 UnityEngine.Debug.LogError($"Server (error): {args.Data}");
-                File.AppendAllText(logsPath, $"[{System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}] Server (error): {args.Data}\n");
+                File.AppendAllText(logsPath, $"[{System.DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss")}] Server (error): {args.Data}\n");
         };
 
         _serverProcess.Start();
@@ -81,7 +81,7 @@ public class Server : MonoBehaviour
         }
         else
         {
-            File.AppendAllText(logsPath, $"[{System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}] Waiting to start server\n");
+            File.AppendAllText(logsPath, $"[{System.DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss")}] Waiting to start server\n");
             //UnityEngine.Debug.Log("Waiting to start server");
         }
     }
@@ -93,7 +93,7 @@ public class Server : MonoBehaviour
 
     void DisplayUnityLog(string logString, string stackTrace, LogType type)
     {
-        File.AppendAllText(logsPath, $"==============Unity debug==============\n[{System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}] {logString}\n\n{stackTrace}==============Server debug=============\n");
+        File.AppendAllText(logsPath, $"==============Unity debug==============\n[{System.DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss")}] {logString}\n\n{stackTrace}==============Server debug=============\n");
     }
 
     void OnDisable()

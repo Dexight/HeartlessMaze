@@ -10,11 +10,6 @@ public class MicrophoneListener : MonoBehaviour
 {
     #region Dropdown GUI 
     [Header("GUI(Optional)")]
-    
-    [Space]
-
-    [Tooltip("Есть ли dropdown на экране. (выставляется вручную)")]
-    public bool dropdownOnScreen = true;
 
     [Tooltip("Dropdown список аудио входов.")]
     [ReadOnlyProperty][SerializeField] private TMP_Dropdown microphoneDropdown;
@@ -92,31 +87,9 @@ public class MicrophoneListener : MonoBehaviour
             microphoneIndicator.color = Color.red;
 
         List<string> microphoneDevices = new(Microphone.devices);
+        selectedMicrophone = Microphone.devices[selectedMicroId];
+        Debug.Log("Выбран микрофон: " + selectedMicrophone);
 
-        if (dropdownOnScreen)
-        {
-            if (microphoneDevices.Count > 0)
-            {
-                microphoneDropdown.AddOptions(microphoneDevices);
-
-                microphoneDropdown.value = selectedMicroId;
-                selectedMicrophone = Microphone.devices[selectedMicroId];
-                Debug.Log("Выбран микрофон: " + selectedMicrophone);
-                
-                microphoneDropdown.RefreshShownValue();
-
-                microphoneDropdown.onValueChanged.AddListener(OnMicrophoneDropdownChanged);
-            }
-            else
-            {
-                microphoneDropdown.AddOptions(new List<string> { "Микрофон не найден" });
-            }
-        }
-        else
-        {
-            selectedMicrophone = Microphone.devices[selectedMicroId];
-            Debug.Log("Выбран микрофон: " + selectedMicrophone);
-        }
         StartMicrophone();
     }
 
@@ -217,11 +190,24 @@ public class MicrophoneListener : MonoBehaviour
     public void setDropdown(TMP_Dropdown dropdown)
     {
         microphoneDropdown = dropdown;
-    }
+        List<string> microphoneDevices = new(Microphone.devices);
 
-    public void setClient(Client c)
-    {
-        client = c;
+        if (microphoneDevices.Count > 0)
+        {
+            microphoneDropdown.AddOptions(microphoneDevices);
+
+            microphoneDropdown.value = selectedMicroId;
+            selectedMicrophone = Microphone.devices[selectedMicroId];
+            Debug.Log("Выбран микрофон: " + selectedMicrophone);
+
+            microphoneDropdown.RefreshShownValue();
+
+            microphoneDropdown.onValueChanged.AddListener(OnMicrophoneDropdownChanged);
+        }
+        else
+        {
+            microphoneDropdown.AddOptions(new List<string> { "Микрофон не найден" });
+        }
     }
 
     public void setShowTimeDelay(ShowTimeDelay std)

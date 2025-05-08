@@ -1,4 +1,5 @@
 using TMPro;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 public class GUI_manager : MonoBehaviour
@@ -8,9 +9,12 @@ public class GUI_manager : MonoBehaviour
     public Image indicator;
     void Start()
     {
-
         microphoneListener = MicrophoneListener.Instance;
-        microphoneListener.setDropdown(dropdown);
-        microphoneListener.setIndicator(indicator);
+
+        if (dropdown)
+            microphoneListener.setDropdown(dropdown);
+
+        if (indicator)
+            microphoneListener.setIndicator(indicator);
     }
 }
