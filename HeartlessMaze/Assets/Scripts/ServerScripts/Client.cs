@@ -34,7 +34,7 @@ public class Client : MonoBehaviour
                 hasNewData = false;
             }
 
-            UnityEngine.Debug.Log($"Получен результат: {dataToProcess}");
+            UnityEngine.Debug.Log($"Result: {dataToProcess}"); // Убрать для безопасности данных пользователя
             commandManager.procedureText(dataToProcess);
             if (waitCircle)
                 waitCircle.stopWaitCircle();

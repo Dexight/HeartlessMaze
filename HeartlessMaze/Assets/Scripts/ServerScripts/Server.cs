@@ -9,10 +9,18 @@ public class Server : MonoBehaviour
     [ReadOnlyProperty][SerializeField] private bool serverReadyFlag = false;
     string modelPath = $"{Application.streamingAssetsPath}/model.onnx";
     string vocabPath = $"{Application.streamingAssetsPath}/vocab.json";
+    string logsPath = $"{Application.streamingAssetsPath}/serverLogs.txt";
+
+    private void Awake()
+    {
+        File.Delete(logsPath);
+    }
 
     void Start()
     {
+        Application.logMessageReceived += DisplayUnityLog;
         client = GetComponent<Client>();
+        
         //string exePath = Path.Combine(Application.streamingAssetsPath, "model_script.exe");
         string exePath = $"{Application.streamingAssetsPath}/test_server.exe";
 
@@ -42,14 +50,17 @@ public class Server : MonoBehaviour
             if (args.Data != null)
             {
                 UnityEngine.Debug.Log($"Server: {args.Data}");
+                File.AppendAllText(logsPath, $"[{System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}] Server: {args.Data}\n");
             }
+
             if (args.Data == "...py-server ready...")
                 serverReadyFlag = true;
         };
         _serverProcess.ErrorDataReceived += (sender, args) => {
             if (args.Data != null)
                 UnityEngine.Debug.LogError($"Server (error): {args.Data}");
-            };
+                File.AppendAllText(logsPath, $"[{System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}] Server (error): {args.Data}\n");
+        };
 
         _serverProcess.Start();
 
@@ -70,12 +81,23 @@ public class Server : MonoBehaviour
         }
         else
         {
-            UnityEngine.Debug.Log("Waiting to start server");
+            File.AppendAllText(logsPath, $"[{System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}] Waiting to start server\n");
+            //UnityEngine.Debug.Log("Waiting to start server");
         }
     }
 
     public bool IsServerReady()
     {
         return serverReadyFlag;
+    }
+
+    void DisplayUnityLog(string logString, string stackTrace, LogType type)
+    {
+        File.AppendAllText(logsPath, $"==============Unity debug==============\n[{System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}] {logString}\n\n{stackTrace}==============Server debug=============\n");
+    }
+
+    void OnDisable()
+    {
+        Application.logMessageReceived -= DisplayUnityLog;
     }
 }

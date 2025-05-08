@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using TMPro;
 using UnityEngine;
@@ -8,6 +9,8 @@ public class LogPanel : MonoBehaviour
     public GameObject logPanel;
     public GameObject testPanel;
     public GameObject loadingText;
+
+    string logsPath = $"{Application.streamingAssetsPath}/serverLogs.txt";
 
     //public Color normalTextColor;
     //public Color WarningTextColor;
@@ -20,7 +23,6 @@ public class LogPanel : MonoBehaviour
     private void Awake()
     {
         logText.text = "";
-        Application.logMessageReceived += DisplayLog;
     }
 
     void Start()
@@ -30,6 +32,7 @@ public class LogPanel : MonoBehaviour
 
     void Update()
     {
+        DisplayServerLog();
         if (client.canSend)
         {
             testPanel.gameObject.SetActive(true);
@@ -38,17 +41,8 @@ public class LogPanel : MonoBehaviour
         }
     }
 
-    void DisplayLog(string logString, string stackTrace, LogType type)
+    void DisplayServerLog()
     {
-        logText.text += logString + "\n\n" + stackTrace + "====================================\n";
-    }
-
-    //void OnEnable()
-    //{
-    //}
-
-    void OnDisable()
-    {
-        Application.logMessageReceived -= DisplayLog;
+        logText.text = File.ReadAllText(logsPath);
     }
 }

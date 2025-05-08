@@ -393,27 +393,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4655877778422411580, guid: 101db1914b74e354c9dc03e8f59753fc, type: 3}
       propertyPath: commands.Array.data[0].name
-      value: "\u0432\u0435\u0440"
-      objectReference: {fileID: 0}
-    - target: {fileID: 4655877778422411580, guid: 101db1914b74e354c9dc03e8f59753fc, type: 3}
-      propertyPath: commands.Array.data[1].name
       value: "\u043D\u0438\u0437"
       objectReference: {fileID: 0}
     - target: {fileID: 4655877778422411580, guid: 101db1914b74e354c9dc03e8f59753fc, type: 3}
-      propertyPath: commands.Array.data[2].name
+      propertyPath: commands.Array.data[1].name
       value: "\u043D\u0438\u0441"
       objectReference: {fileID: 0}
     - target: {fileID: 4655877778422411580, guid: 101db1914b74e354c9dc03e8f59753fc, type: 3}
-      propertyPath: commands.Array.data[3].name
+      propertyPath: commands.Array.data[2].name
       value: "\u043D\u0438\u0446"
       objectReference: {fileID: 0}
     - target: {fileID: 4655877778422411580, guid: 101db1914b74e354c9dc03e8f59753fc, type: 3}
-      propertyPath: commands.Array.data[4].name
+      propertyPath: commands.Array.data[3].name
       value: "\u043B\u0435\u0432"
       objectReference: {fileID: 0}
     - target: {fileID: 4655877778422411580, guid: 101db1914b74e354c9dc03e8f59753fc, type: 3}
-      propertyPath: commands.Array.data[5].name
+      propertyPath: commands.Array.data[4].name
       value: "\u043F\u0440\u0430\u0432"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4655877778422411580, guid: 101db1914b74e354c9dc03e8f59753fc, type: 3}
+      propertyPath: commands.Array.data[5].name
+      value: "\u0432\u0435\u0440\u0445"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4655877778422411580, guid: 101db1914b74e354c9dc03e8f59753fc, type: 3}
+      propertyPath: commands.Array.data[6].name
+      value: "\u0430"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4655877778422411580, guid: 101db1914b74e354c9dc03e8f59753fc, type: 3}
+      propertyPath: commands.Array.data[0].eventId
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4655877778422411580, guid: 101db1914b74e354c9dc03e8f59753fc, type: 3}
       propertyPath: commands.Array.data[1].eventId
@@ -425,14 +433,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4655877778422411580, guid: 101db1914b74e354c9dc03e8f59753fc, type: 3}
       propertyPath: commands.Array.data[3].eventId
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4655877778422411580, guid: 101db1914b74e354c9dc03e8f59753fc, type: 3}
-      propertyPath: commands.Array.data[4].eventId
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4655877778422411580, guid: 101db1914b74e354c9dc03e8f59753fc, type: 3}
+      propertyPath: commands.Array.data[4].eventId
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4655877778422411580, guid: 101db1914b74e354c9dc03e8f59753fc, type: 3}
       propertyPath: commands.Array.data[5].eventId
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4655877778422411580, guid: 101db1914b74e354c9dc03e8f59753fc, type: 3}
+      propertyPath: commands.Array.data[6].eventId
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4655877778422411580, guid: 101db1914b74e354c9dc03e8f59753fc, type: 3}
