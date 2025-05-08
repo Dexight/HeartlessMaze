@@ -55,9 +55,9 @@ def start_server():
             with open(model_path, 'r') as mfile:
                 print("Model file exists and can be readed", flush=True)
         except FileNotFoundError:
-            print("Model file is not exists", flush=True)
+            print("Model file is not exists. Path: " + model_path, flush=True)
         except PermissionError:
-            print("Problems with permissions to read model file.", flush=True)
+            print("Problems with permissions to read model file. Path: " + model_path, flush=True)
 
         ort_session = onnxruntime.InferenceSession(model_path)#Загрузка модели
         print("model was loaded succesfuly")
