@@ -1686,7 +1686,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 8
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 1024
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2560,10 +2560,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 995698963}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 31}
-  m_SizeDelta: {x: -756.88, y: 4.3829956}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 28.029053}
+  m_SizeDelta: {x: 381.92, y: 4.49}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1646018989
 MonoBehaviour:
@@ -3159,8 +3159,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 683725463}
   m_HandleRect: {fileID: 683725462}
   m_Direction: 2
-  m_Value: -0.000000049380752
-  m_Size: 0.22795069
+  m_Value: 0.000000008230126
+  m_Size: 0.17468041
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3509,7 +3509,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4655877778422411580, guid: 101db1914b74e354c9dc03e8f59753fc, type: 3}
       propertyPath: commands.Array.data[0].name
-      value: "\u043F\u0440\u0438\u0432\u0435"
+      value: "\u041F\u041F\u0440\u0438\u0432\u0435"
       objectReference: {fileID: 0}
     - target: {fileID: 4655877778422411580, guid: 101db1914b74e354c9dc03e8f59753fc, type: 3}
       propertyPath: events.Array.data[0].m_PersistentCalls.m_Calls.Array.size

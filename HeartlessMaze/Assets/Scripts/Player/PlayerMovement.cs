@@ -1,5 +1,9 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem.LowLevel;
+using UnityEngine.InputSystem;
+using System.Collections.Generic;
+using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -7,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     private bool _canMove = true;
     [ReadOnlyProperty][SerializeField] private Vector2 targetPosition;
+    [SerializeField] private GameObject pauseMenu;
     #endregion
 
     #region checkers
@@ -24,12 +29,14 @@ public class PlayerMovement : MonoBehaviour
     private bool _canGoUp;
     private bool _canGoRight;
     private bool _canGoDown;
+    private bool _isPaused = false;
     #endregion
 
     Animator anim;
-
+    
     void Start()
     {
+        pauseMenu.SetActive(false);
         targetPosition = transform.position;
         anim = GetComponent<Animator>();
     }
@@ -63,9 +70,14 @@ public class PlayerMovement : MonoBehaviour
             goDown();
         }
 
-       if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D))
         {
             goRight();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            Debug.Log("Z pressed");
         }
     }
 
@@ -154,5 +166,35 @@ public class PlayerMovement : MonoBehaviour
             //TODO
             Debug.Log("Вправо идти нельзя");
         }
+    }
+
+    public void pressPause()
+    {
+        if(_isPaused)
+        {
+            Debug.Log("Not paused");
+            pauseMenu.SetActive(false);
+            _isPaused = false;
+        }
+        else
+        {
+            Debug.Log("Paused");
+            pauseMenu.SetActive(true);
+            _isPaused = true;
+        }
+    }
+
+    public void pressZ()
+    {
+        StartCoroutine(PressZCoroutine());
+        Debug.Log("FunctionZWOrkedLog");
+    }
+
+    IEnumerator PressZCoroutine()
+    {
+        var kb = InputSystem.GetDevice<Keyboard>();
+        InputSystem.QueueStateEvent(kb, new KeyboardState(Key.Z));
+        yield return null;
+        InputSystem.QueueStateEvent(kb, new KeyboardState());
     }
 }

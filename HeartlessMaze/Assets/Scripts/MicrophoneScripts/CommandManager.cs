@@ -3,63 +3,43 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using System.Text.RegularExpressions;
-using UnityEngine.Windows;
 
 public class CommandManager : MonoBehaviour
 {   
     [Serializable]
-    public struct Command
+    public class Command
     {
         public string name;
         public int eventId;
 
-        public Command(string name, int eventId)
+        //command == command
+        public static bool operator ==(Command c1, Command c2)
         {
-            name = name.ToLower();
-            string pattern = @"([à-ÿÀ-ß¸¨])\1";
-            string result = Regex.Replace(name, pattern, "$1");
-            this.name = result;
-
-            this.eventId = eventId;
+            if (ReferenceEquals(c1, c2)) return true;
+            if (c1 is null || c2 is null) return false;
+            return c1.name == c2.name;
         }
 
-        // Command != Command
-        public static bool operator ==(Command left, Command right)
+        //command == string
+        public static bool operator ==(Command c, string s)
         {
-            return left.name == right.name;
+            if (c is null || s is null) return false;
+            return c.name == s;
         }
 
-        // Command != Command
-        public static bool operator !=(Command left, Command right)
-        {
-            return left.name != right.name;
-        }
+        //command != command
+        public static bool operator !=(Command c1, Command c2) => !(c1 == c2);
 
-        // Command == string
-        public static bool operator ==(Command command, string name)
-        {
-            return command.name == name;
-        }
+        //command != string
+        public static bool operator !=(Command c, string s) => !(c == s);
+        
+        //string == command
+        public static bool operator ==(string s, Command c) => c == s;
+        
+        //string != command
+        public static bool operator !=(string s, Command c) => !(c == s);
 
-        // Command != string
-        public static bool operator !=(Command command, string name)
-        {
-            return command.name != name;
-        }
-
-        // string == Command
-        public static bool operator ==(string name, Command command)
-        {
-            return name == command.name;
-        }
-
-        // string != Command
-        public static bool operator !=(string name, Command command)
-        {
-            return name != command.name;
-        }
-
-        public override readonly bool Equals(object obj)
+        public override bool Equals(object obj)
         {
             return obj switch
             {
@@ -69,7 +49,7 @@ public class CommandManager : MonoBehaviour
             };
         }
 
-        public override readonly int GetHashCode()
+        public override int GetHashCode()
         {
             return name?.GetHashCode() ?? 0;
         }
@@ -86,7 +66,7 @@ public class CommandManager : MonoBehaviour
     public void procedureText(string input)
     {
         Command c = commands.Find(x => input.Contains(x.name));
-        if (c != null)
+        if (c != (Command)null)
         {
             events[c.eventId].Invoke();
         }
@@ -99,10 +79,13 @@ public class CommandManager : MonoBehaviour
     void Start()
     {
         MicrophoneListener.Instance.GetComponent<Client>().setCommandManager(this);
+
+        //Normalization
+        for (int i = 0; i < commands.Count; i++)
+        {
+            var cmd = commands[i];
+            cmd.name = Regex.Replace(cmd.name.ToLower(), @"([à-ÿÀ-ß¸¨])\1", "$1");
+            commands[i] = cmd;
+        }
     }
-
-    //void Update()
-    //{
-
-    //}
 }
