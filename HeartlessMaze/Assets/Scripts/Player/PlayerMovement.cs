@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     private bool _canMove = true;
     [ReadOnlyProperty][SerializeField] private Vector2 targetPosition;
-    [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private PauseMenu pauseMenu;
     #endregion
 
     #region checkers
@@ -29,14 +29,13 @@ public class PlayerMovement : MonoBehaviour
     private bool _canGoUp;
     private bool _canGoRight;
     private bool _canGoDown;
-    private bool _isPaused = false;
+    [ReadOnlyProperty] public bool _isPaused = false;
     #endregion
 
     Animator anim;
     
     void Start()
     {
-        pauseMenu.SetActive(false);
         targetPosition = transform.position;
         anim = GetComponent<Animator>();
     }
@@ -57,27 +56,32 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W))
         {
-            goUp();
+            pressW();
         }
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            goLeft();
+            pressA();
         }
 
         if (Input.GetKeyDown(KeyCode.S))
         {
-            goDown();
+            pressS();
         }
 
         if (Input.GetKeyDown(KeyCode.D))
         {
-            goRight();
+            pressD();
         }
 
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Debug.Log("Z pressed");
+            pressEscape();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            pressReturn();
         }
     }
 
@@ -104,97 +108,123 @@ public class PlayerMovement : MonoBehaviour
         Gizmos.DrawWireCube(downChecker.position, checkSizeUpDown);
     }
 
-    public void goUp()
+    public void pressW()
     {
-        if (_canGoUp)
+        if (!_isPaused)
         {
-            targetPosition += Vector2.up;
-            _canMove = false;
-            anim.SetTrigger("Up");
-            return;
+            if (_canGoUp)
+            {
+                targetPosition += Vector2.up;
+                _canMove = false;
+                anim.SetTrigger("Up");
+                return;
+            }
+            else
+            {
+                //TODO
+                Debug.Log("Вверх идти нельзя");
+            }
         }
         else
         {
-            //TODO
-            Debug.Log("Вверх идти нельзя");
+            pauseMenu.previousButton();
         }
     }
 
-    public void goDown()
+    public void pressS()
     {
-        if (_canGoDown)
+        if (!_isPaused)
         {
-            targetPosition += Vector2.down;
-            _canMove = false;
-            anim.SetTrigger("Down");
-            return;
+            if (_canGoDown)
+            {
+                targetPosition += Vector2.down;
+                _canMove = false;
+                anim.SetTrigger("Down");
+                return;
+            }
+            else
+            {
+                //TODO
+                Debug.Log("Вниз идти нельзя");
+            }
         }
         else
         {
-            //TODO
-            Debug.Log("Вниз идти нельзя");
+            pauseMenu.nextButton();
         }
     }
 
-    public void goLeft()
+    public void pressA()
     {
-        if (_canGoLeft)
+        if (!_isPaused)
         {
-            targetPosition += Vector2.left;
-            _canMove = false;
-            anim.SetTrigger("Left");
-            return;
+            if (_canGoLeft)
+            {
+                targetPosition += Vector2.left;
+                _canMove = false;
+                anim.SetTrigger("Left");
+                return;
+            }
+            else
+            {
+                //TODO
+                Debug.Log("Влево идти нельзя");
+            }
         }
         else
         {
-            //TODO
-            Debug.Log("Влево идти нельзя");
+            //nothing?   
         }
     }
 
-    public void goRight()
+    public void pressD()
     {
-        if (_canGoRight)
+        if (!_isPaused)
         {
-            targetPosition += Vector2.right;
-            _canMove = false;
-            anim.SetTrigger("Right");
-            return;
+            if (_canGoRight)
+            {
+                targetPosition += Vector2.right;
+                _canMove = false;
+                anim.SetTrigger("Right");
+                return;
+            }
+            else
+            {
+                //TODO
+                Debug.Log("Вправо идти нельзя");
+            }
         }
         else
         {
-            //TODO
-            Debug.Log("Вправо идти нельзя");
+            //nothing?
         }
     }
 
-    public void pressPause()
+    public void pressEscape()
     {
-        if(_isPaused)
+        if (_isPaused)
         {
             Debug.Log("Not paused");
-            pauseMenu.SetActive(false);
+            pauseMenu.gameObject.SetActive(false);
             _isPaused = false;
         }
         else
         {
             Debug.Log("Paused");
-            pauseMenu.SetActive(true);
+            pauseMenu.gameObject.SetActive(true);
             _isPaused = true;
         }
     }
 
-    public void pressZ()
+    public void pressReturn()
     {
-        StartCoroutine(PressZCoroutine());
-        Debug.Log("FunctionZWOrkedLog");
-    }
-
-    IEnumerator PressZCoroutine()
-    {
-        var kb = InputSystem.GetDevice<Keyboard>();
-        InputSystem.QueueStateEvent(kb, new KeyboardState(Key.Z));
-        yield return null;
-        InputSystem.QueueStateEvent(kb, new KeyboardState());
+        if (_isPaused) 
+        {
+            pauseMenu.pressButton();
+        }
+        else
+        {
+            // nothing?
+        }
     }
 }

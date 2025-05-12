@@ -2734,6 +2734,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1230285460}
     - target: {fileID: 120561263280008247, guid: 059b3e78fa16d5b46a70726c859d976b, type: 3}
+      propertyPath: clipDelay
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 120561263280008247, guid: 059b3e78fa16d5b46a70726c859d976b, type: 3}
+      propertyPath: sampleWindow
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 120561263280008247, guid: 059b3e78fa16d5b46a70726c859d976b, type: 3}
       propertyPath: dropdownOnScreen
       value: 1
       objectReference: {fileID: 0}
