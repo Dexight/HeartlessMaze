@@ -31,12 +31,6 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Loading");
     }
 
-    public void MenuScene()
-    {
-        currentScene = "Menu";
-        SceneManager.LoadScene("Menu");
-    }
-
     public void GameScene()
     {
         currentScene = "Game";

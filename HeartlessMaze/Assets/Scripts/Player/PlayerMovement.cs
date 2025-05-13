@@ -1,10 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.InputSystem.LowLevel;
-using UnityEngine.InputSystem;
-using System.Collections.Generic;
-using System.Collections;
-using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -14,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [ReadOnlyProperty][SerializeField] private Vector2 targetPosition;
     [SerializeField] private PauseMenu pauseMenu;
     [SerializeField] private GameObject pauseButton;
+    [SerializeField] private settings settingsMenu;
     #endregion
 
     #region checkers
@@ -140,7 +135,10 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            pauseMenu.previousButton();
+            if (pauseMenu.inSettingMenu)
+                settingsMenu.previousButton();
+            else
+                pauseMenu.previousButton();
         }
     }
 
@@ -163,7 +161,10 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            pauseMenu.nextButton();
+            if (pauseMenu.inSettingMenu)
+                settingsMenu.nextButton();
+            else
+                pauseMenu.nextButton();
         }
     }
 
@@ -186,7 +187,14 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            //nothing?   
+            if (pauseMenu.inSettingMenu)
+            {
+                settingsMenu.audioChangeLeft();
+            }
+            else
+            {
+                // nothing
+            }
         }
     }
 
@@ -209,7 +217,14 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            //nothing?
+            if (pauseMenu.inSettingMenu)
+            {
+                settingsMenu.audioChangeRight();
+            }
+            else
+            {
+                // nothing
+            }
         }
     }
 
@@ -217,10 +232,19 @@ public class PlayerMovement : MonoBehaviour
     {
         if (_isPaused)
         {
-            Debug.Log("Not paused");
-            pauseMenu.gameObject.SetActive(false);
-            pauseButton.SetActive(true);
-            _isPaused = false;
+            if (pauseMenu.inSettingMenu)
+            {
+                pauseMenu.inSettingMenu = false;
+                settingsMenu.gameObject.SetActive(false);
+            }
+            else
+            {
+                Debug.Log("Not paused");
+                pauseMenu.gameObject.SetActive(false);
+                pauseButton.SetActive(true);
+                pauseMenu.currentButtonIndex = 0;
+                _isPaused = false;
+            }
         }
         else
         {
@@ -233,13 +257,20 @@ public class PlayerMovement : MonoBehaviour
 
     public void pressReturn()
     {
-        if (_isPaused) 
+        if (_isPaused)
         {
-            pauseMenu.pressButton();
+            if (pauseMenu.inSettingMenu)
+            {
+                settingsMenu.pressButton();
+            }
+            else
+            {
+                pauseMenu.pressButton();
+            }
         }
         else
         {
-            // nothing?
+            //nothing?
         }
     }
 }

@@ -21,7 +21,6 @@ public class Server : MonoBehaviour
         Application.logMessageReceived += DisplayUnityLog;
         client = GetComponent<Client>();
         
-        //string exePath = Path.Combine(Application.streamingAssetsPath, "model_script.exe");
         string exePath = $"{Application.streamingAssetsPath}/test_server.exe";
 
         // Проверка существования файла
@@ -34,7 +33,7 @@ public class Server : MonoBehaviour
         ProcessStartInfo startInfo = new ProcessStartInfo
         {
             FileName = exePath,
-            Arguments = modelPath + " " + vocabPath,
+            Arguments = $"\"{modelPath}\" \"{vocabPath}\"",
             UseShellExecute = false,
             CreateNoWindow = true,
             StandardOutputEncoding = System.Text.Encoding.UTF8,

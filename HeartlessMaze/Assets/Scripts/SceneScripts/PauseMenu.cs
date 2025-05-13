@@ -7,10 +7,14 @@ public class PauseMenu : MonoBehaviour
     public GameObject[] arrows;
     public int currentButtonIndex = 0;
 
+    public bool inSettingMenu = false;
     [SerializeField] private PlayerMovement playerMovement;
+
+    [SerializeField] private settings settingsMenu;
+
     void Start()
     {
-        
+        settingsMenu.gameObject.SetActive(false);
     }
 
     public void nextButton()
@@ -45,18 +49,31 @@ public class PauseMenu : MonoBehaviour
                 playerMovement.pressEscape();
                 break;
             case 1:
-                // TODO
+                gotoSettings();
                 break;
             case 2:
-                //TODO
+                Exit();
                 break;
-            case 3:
-                #if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
-                #else
-                Application.Quit();
-                #endif
-                break;
+
         }
+    }
+
+    public void Exit()
+    {
+        if (playerMovement._isPaused && !inSettingMenu)
+        {
+            #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+            #else
+            Application.Quit();
+            #endif
+        }
+    }
+
+    public void gotoSettings()
+    {
+        inSettingMenu = true;
+        settingsMenu.currentButtonIndex = 0;
+        settingsMenu.gameObject.SetActive(true);
     }
 }
