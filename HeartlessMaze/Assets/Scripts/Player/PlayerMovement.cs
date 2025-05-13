@@ -4,6 +4,7 @@ using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
 using System.Collections;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private bool _canMove = true;
     [ReadOnlyProperty][SerializeField] private Vector2 targetPosition;
     [SerializeField] private PauseMenu pauseMenu;
+    [SerializeField] private GameObject pauseButton;
     #endregion
 
     #region checkers
@@ -19,6 +21,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Transform upChecker;
     [SerializeField] Transform rightChecker;
     [SerializeField] Transform downChecker;
+
+    [SerializeField] GameObject leftTextHelper;
+    [SerializeField] GameObject rightTextHelper;
+    [SerializeField] GameObject upTextHelper;
+    [SerializeField] GameObject downTextHelper;
+
 
     [SerializeField] Vector2 checkSizeLeftRight; //размер чекеров
     [SerializeField] Vector2 checkSizeUpDown; //размер чекеров
@@ -50,6 +58,11 @@ public class PlayerMovement : MonoBehaviour
             _canMove = true;
 
         CheckWorld();
+
+        leftTextHelper.SetActive(_canGoLeft);
+        rightTextHelper.SetActive(_canGoRight);
+        upTextHelper.SetActive(_canGoUp);
+        downTextHelper.SetActive(_canGoDown);
     }
 
     void Move()
@@ -206,12 +219,14 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("Not paused");
             pauseMenu.gameObject.SetActive(false);
+            pauseButton.SetActive(true);
             _isPaused = false;
         }
         else
         {
             Debug.Log("Paused");
             pauseMenu.gameObject.SetActive(true);
+            pauseButton.SetActive(false);
             _isPaused = true;
         }
     }
