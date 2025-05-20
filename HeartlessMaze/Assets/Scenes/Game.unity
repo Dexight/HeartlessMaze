@@ -1123,7 +1123,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4655877778422411580, guid: 101db1914b74e354c9dc03e8f59753fc, type: 3}
       propertyPath: commands.Array.data[10].name
-      value: "\u0445\u043E\u0434"
+      value: "\u0432\u044B\u0445\u043E\u0434"
       objectReference: {fileID: 0}
     - target: {fileID: 4655877778422411580, guid: 101db1914b74e354c9dc03e8f59753fc, type: 3}
       propertyPath: commands.Array.data[11].name

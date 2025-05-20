@@ -35,5 +35,7 @@ public class GameManager : MonoBehaviour
     {
         currentScene = "Game";
         SceneManager.LoadScene("Game");
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }

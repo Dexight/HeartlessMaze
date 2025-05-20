@@ -1,3 +1,4 @@
+using System;
 using System.Diagnostics;
 using System.IO;
 using UnityEngine;
@@ -6,11 +7,12 @@ public class Server : MonoBehaviour
 {
     private Process _serverProcess;
     private Client client;
-    [ReadOnlyProperty][SerializeField] private bool serverReadyFlag = false;
+    //[ReadOnlyProperty][SerializeField] private bool serverReadyFlag = false;
     string modelPath = $"{Application.streamingAssetsPath}/model.onnx";
     string vocabPath = $"{Application.streamingAssetsPath}/vocab.json";
+    
     string logsPath = $"{Application.streamingAssetsPath}/serverLogs.txt";
-
+    string flagPath;
     private void Awake()
     {
         File.Delete(logsPath);
@@ -18,6 +20,7 @@ public class Server : MonoBehaviour
 
     void Start()
     {
+        flagPath = $"{Application.persistentDataPath}/flag.txt";
         Application.logMessageReceived += DisplayUnityLog;
         client = GetComponent<Client>();
         
@@ -33,7 +36,7 @@ public class Server : MonoBehaviour
         ProcessStartInfo startInfo = new ProcessStartInfo
         {
             FileName = exePath,
-            Arguments = $"\"{modelPath}\" \"{vocabPath}\"",
+            Arguments = $"\"{flagPath}\" \"{modelPath}\" \"{vocabPath}\"",
             UseShellExecute = false,
             CreateNoWindow = true,
             StandardOutputEncoding = System.Text.Encoding.UTF8,
@@ -51,9 +54,6 @@ public class Server : MonoBehaviour
                 UnityEngine.Debug.Log($"Server: {args.Data}");
                 File.AppendAllText(logsPath, $"[{System.DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss")}] Server: {args.Data}\n");
             }
-
-            if (args.Data == "...py-server ready...")
-                serverReadyFlag = true;
         };
         _serverProcess.ErrorDataReceived += (sender, args) => {
             if (args.Data != null)
@@ -72,22 +72,18 @@ public class Server : MonoBehaviour
 
     private void CheckServerStatus()
     {
-        if (serverReadyFlag)
+        if (File.Exists(flagPath))
         {
             UnityEngine.Debug.Log($"Server was started.");
             CancelInvoke(nameof(CheckServerStatus)); // Останавливаем проверку
             client.ConnectToPythonServer();
+            File.Delete(flagPath);
         }
         else
         {
             File.AppendAllText(logsPath, $"[{System.DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss")}] Waiting to start server\n");
             //UnityEngine.Debug.Log("Waiting to start server");
         }
-    }
-
-    public bool IsServerReady()
-    {
-        return serverReadyFlag;
     }
 
     void DisplayUnityLog(string logString, string stackTrace, LogType type)
