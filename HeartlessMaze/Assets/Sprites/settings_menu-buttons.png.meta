@@ -17,6 +17,12 @@ TextureImporter:
   - first:
       213: 7572488710770903557
     second: settings_menu-buttons_4
+  - first:
+      213: 7782231232049396811
+    second: settings_menu-buttons_5
+  - first:
+      213: -3129894893566742577
+    second: settings_menu-buttons_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -129,7 +135,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 34
-        y: 65
+        y: 129
         width: 141
         height: 30
       alignment: 0
@@ -151,7 +157,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3
-        y: 33
+        y: 97
         width: 26
         height: 30
       alignment: 0
@@ -173,7 +179,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 33
-        y: 32
+        y: 96
         width: 143
         height: 32
       alignment: 0
@@ -195,7 +201,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 179
-        y: 33
+        y: 97
         width: 26
         height: 30
       alignment: 0
@@ -216,10 +222,10 @@ TextureImporter:
       name: settings_menu-buttons_4
       rect:
         serializedVersion: 2
-        x: 3
-        y: 0
-        width: 202
-        height: 31
+        x: 1
+        y: 32
+        width: 206
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -230,6 +236,50 @@ TextureImporter:
       bones: []
       spriteID: 50ac7279c52e61960800000000000000
       internalID: 7572488710770903557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: settings_menu-buttons_5
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 64
+        width: 202
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4c3142d21a000c60800000000000000
+      internalID: 7782231232049396811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: settings_menu-buttons_6
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 0
+        width: 143
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcf25ac5d216094d0800000000000000
+      internalID: -3129894893566742577
       vertices: []
       indices: 
       edges: []
@@ -253,6 +303,8 @@ TextureImporter:
       settings_menu-buttons_2: -2818325754627491774
       settings_menu-buttons_3: -8787742852488629542
       settings_menu-buttons_4: 7572488710770903557
+      settings_menu-buttons_5: 7782231232049396811
+      settings_menu-buttons_6: -3129894893566742577
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
