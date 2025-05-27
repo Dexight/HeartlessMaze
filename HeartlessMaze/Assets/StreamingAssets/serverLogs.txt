@@ -1,55 +1,55 @@
 ==============Unity debug==============
-[22-05-2025 19:34:39] Выбран микрофон: Набор микрофонов (Realtek Audio)
+[20-05-2025 23:34:01] Выбран микрофон: Набор микрофонов (Realtek Audio)
 
 UnityEngine.Debug:Log (object)
 MicrophoneListener:setDropdown (TMPro.TMP_Dropdown) (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:201)
 GUI_manager:Start () (at Assets/Scripts/GUI Things/GUI_manager.cs:14)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:34:39] Путь к аудио: C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio
+[20-05-2025 23:34:01] Путь к аудио: C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio
 
 UnityEngine.Debug:Log (object)
 MicrophoneListener:Start () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:84)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:34:39] Выбран микрофон: Набор микрофонов (Realtek Audio)
+[20-05-2025 23:34:01] Выбран микрофон: Набор микрофонов (Realtek Audio)
 
 UnityEngine.Debug:Log (object)
 MicrophoneListener:Start () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:91)
 ==============Server debug=============
-[22-05-2025 19:34:43] Waiting to start server
-[22-05-2025 19:34:48] Waiting to start server
-[22-05-2025 19:34:53] Waiting to start server
-[22-05-2025 19:34:58] Waiting to start server
-[22-05-2025 19:35:03] Waiting to start server
-[22-05-2025 19:35:08] Waiting to start server
-[22-05-2025 19:35:13] Waiting to start server
-[22-05-2025 19:35:18] Server: Model file exists and can be readed
-[22-05-2025 19:35:19] Waiting to start server
-[22-05-2025 19:35:24] Server: model was loaded succesfuly
-[22-05-2025 19:35:24] Server: Token vocabular file exists and can be readed
-[22-05-2025 19:35:24] Server: model was loaded succesfuly
+[20-05-2025 23:34:05] Waiting to start server
+[20-05-2025 23:34:10] Waiting to start server
+[20-05-2025 23:34:15] Waiting to start server
+[20-05-2025 23:34:20] Waiting to start server
+[20-05-2025 23:34:25] Waiting to start server
+[20-05-2025 23:34:30] Waiting to start server
+[20-05-2025 23:34:35] Waiting to start server
+[20-05-2025 23:34:35] Server: Model file exists and can be readed
+[20-05-2025 23:34:40] Waiting to start server
+[20-05-2025 23:34:41] Server: model was loaded succesfuly
+[20-05-2025 23:34:41] Server: Token vocabular file exists and can be readed
+[20-05-2025 23:34:41] Server: model was loaded succesfuly
 ==============Unity debug==============
-[22-05-2025 19:35:24] Server was started.
+[20-05-2025 23:34:45] Server was started.
 
 UnityEngine.Debug:Log (object)
 Server:CheckServerStatus () (at Assets/Scripts/ServerScripts/Server.cs:77)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:35:24] Подключено к Python-серверу.
+[20-05-2025 23:34:45] Подключено к Python-серверу.
 
 UnityEngine.Debug:Log (object)
 Client:ConnectToPythonServer () (at Assets/Scripts/ServerScripts/Client.cs:50)
 Server:CheckServerStatus () (at Assets/Scripts/ServerScripts/Server.cs:79)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:35:26] Volume = 1,610661
+[20-05-2025 23:34:47] Volume = 1,564646
 
 UnityEngine.Debug:Log (object)
 MicrophoneListener:Update () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:108)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:35:28] C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record1.wav
+[20-05-2025 23:34:49] C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record1.wav
 
 UnityEngine.Debug:Log (object)
 SavWav:Save (string,UnityEngine.AudioClip) (at Assets/Scripts/MicrophoneScripts/SavWav.cs:43)
@@ -58,7 +58,7 @@ MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScr
 UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:35:28] Отправлены данные: C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record1.wav
+[20-05-2025 23:34:49] Отправлены данные: C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record1.wav
 
 UnityEngine.Debug:Log (object)
 Client:SendAudioPathToPython (string) (at Assets/Scripts/ServerScripts/Client.cs:74)
@@ -67,33 +67,33 @@ MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScr
 UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:35:35] Result: стройкето есто так вот мои насца 
+[20-05-2025 23:34:55] Result: примет 
 
 UnityEngine.Debug:Log (object)
 Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:37)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:35:35] Команда не найдена
+[20-05-2025 23:34:55] Команда не найдена
 
 UnityEngine.Debug:Log (object)
 CommandManager:procedureText (string) (at Assets/Scripts/MicrophoneScripts/CommandManager.cs:75)
 Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:38)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:35:35] circleStopped
+[20-05-2025 23:34:55] circleStopped
 
 UnityEngine.Debug:Log (object)
 WaitCircle:stopWaitCircle () (at Assets/Scripts/GUI Things/WaitCircle.cs:49)
 Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:40)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:35:37] Volume = 2,469683
+[20-05-2025 23:34:57] Volume = 2,639437
 
 UnityEngine.Debug:Log (object)
 MicrophoneListener:Update () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:108)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:35:39] C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record2.wav
+[20-05-2025 23:34:59] C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record2.wav
 
 UnityEngine.Debug:Log (object)
 SavWav:Save (string,UnityEngine.AudioClip) (at Assets/Scripts/MicrophoneScripts/SavWav.cs:43)
@@ -102,7 +102,7 @@ MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScr
 UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:35:39] Отправлены данные: C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record2.wav
+[20-05-2025 23:34:59] Отправлены данные: C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record2.wav
 
 UnityEngine.Debug:Log (object)
 Client:SendAudioPathToPython (string) (at Assets/Scripts/ServerScripts/Client.cs:74)
@@ -111,33 +111,33 @@ MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScr
 UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:35:40] Result:  чустить то есть вот-о порог вот 
+[20-05-2025 23:35:00] Result: принет 
 
 UnityEngine.Debug:Log (object)
 Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:37)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:35:40] Команда не найдена
+[20-05-2025 23:35:00] Команда не найдена
 
 UnityEngine.Debug:Log (object)
 CommandManager:procedureText (string) (at Assets/Scripts/MicrophoneScripts/CommandManager.cs:75)
 Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:38)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:35:40] circleStopped
+[20-05-2025 23:35:00] circleStopped
 
 UnityEngine.Debug:Log (object)
 WaitCircle:stopWaitCircle () (at Assets/Scripts/GUI Things/WaitCircle.cs:49)
 Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:40)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:35:40] Volume = 1,421595
+[20-05-2025 23:35:02] Volume = 1,479912
 
 UnityEngine.Debug:Log (object)
 MicrophoneListener:Update () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:108)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:35:42] C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record3.wav
+[20-05-2025 23:35:04] C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record3.wav
 
 UnityEngine.Debug:Log (object)
 SavWav:Save (string,UnityEngine.AudioClip) (at Assets/Scripts/MicrophoneScripts/SavWav.cs:43)
@@ -146,7 +146,7 @@ MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScr
 UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:35:42] Отправлены данные: C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record3.wav
+[20-05-2025 23:35:04] Отправлены данные: C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record3.wav
 
 UnityEngine.Debug:Log (object)
 Client:SendAudioPathToPython (string) (at Assets/Scripts/ServerScripts/Client.cs:74)
@@ -155,33 +155,26 @@ MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScr
 UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:35:43] Result: я их немного изменил посли 
+[20-05-2025 23:35:05] Result: привет 
 
 UnityEngine.Debug:Log (object)
 Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:37)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:35:43] Команда не найдена
-
-UnityEngine.Debug:Log (object)
-CommandManager:procedureText (string) (at Assets/Scripts/MicrophoneScripts/CommandManager.cs:75)
-Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:38)
-==============Server debug=============
-==============Unity debug==============
-[22-05-2025 19:35:43] circleStopped
+[20-05-2025 23:35:05] circleStopped
 
 UnityEngine.Debug:Log (object)
 WaitCircle:stopWaitCircle () (at Assets/Scripts/GUI Things/WaitCircle.cs:49)
 Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:40)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:35:43] Volume = 1,986217
+[20-05-2025 23:35:10] Volume = 1,840687
 
 UnityEngine.Debug:Log (object)
 MicrophoneListener:Update () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:108)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:35:45] C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record4.wav
+[20-05-2025 23:35:12] C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record4.wav
 
 UnityEngine.Debug:Log (object)
 SavWav:Save (string,UnityEngine.AudioClip) (at Assets/Scripts/MicrophoneScripts/SavWav.cs:43)
@@ -190,7 +183,7 @@ MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScr
 UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:35:45] Отправлены данные: C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record4.wav
+[20-05-2025 23:35:12] Отправлены данные: C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record4.wav
 
 UnityEngine.Debug:Log (object)
 Client:SendAudioPathToPython (string) (at Assets/Scripts/ServerScripts/Client.cs:74)
@@ -199,254 +192,35 @@ MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScr
 UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:35:46] Result: ошутительно семяде здесь и здесь стона чтобы пользовать илени 
+[20-05-2025 23:35:13] Result: пауза 
 
 UnityEngine.Debug:Log (object)
 Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:37)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:35:46] Команда не найдена
-
-UnityEngine.Debug:Log (object)
-CommandManager:procedureText (string) (at Assets/Scripts/MicrophoneScripts/CommandManager.cs:75)
-Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:38)
-==============Server debug=============
-==============Unity debug==============
-[22-05-2025 19:35:46] circleStopped
-
-UnityEngine.Debug:Log (object)
-WaitCircle:stopWaitCircle () (at Assets/Scripts/GUI Things/WaitCircle.cs:49)
-Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:40)
-==============Server debug=============
-==============Unity debug==============
-[22-05-2025 19:35:46] Volume = 1,631508
-
-UnityEngine.Debug:Log (object)
-MicrophoneListener:Update () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:108)
-==============Server debug=============
-==============Unity debug==============
-[22-05-2025 19:35:48] C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record5.wav
-
-UnityEngine.Debug:Log (object)
-SavWav:Save (string,UnityEngine.AudioClip) (at Assets/Scripts/MicrophoneScripts/SavWav.cs:43)
-MicrophoneListener:SaveAudioClip () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:148)
-MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:140)
-UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
-==============Server debug=============
-==============Unity debug==============
-[22-05-2025 19:35:48] Отправлены данные: C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record5.wav
-
-UnityEngine.Debug:Log (object)
-Client:SendAudioPathToPython (string) (at Assets/Scripts/ServerScripts/Client.cs:74)
-MicrophoneListener:SaveAudioClip () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:149)
-MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:140)
-UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
-==============Server debug=============
-==============Unity debug==============
-[22-05-2025 19:35:49] Result: напрягат не путать и шаг сделалвь 
-
-UnityEngine.Debug:Log (object)
-Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:37)
-==============Server debug=============
-==============Unity debug==============
-[22-05-2025 19:35:49] Команда не найдена
-
-UnityEngine.Debug:Log (object)
-CommandManager:procedureText (string) (at Assets/Scripts/MicrophoneScripts/CommandManager.cs:75)
-Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:38)
-==============Server debug=============
-==============Unity debug==============
-[22-05-2025 19:35:49] circleStopped
-
-UnityEngine.Debug:Log (object)
-WaitCircle:stopWaitCircle () (at Assets/Scripts/GUI Things/WaitCircle.cs:49)
-Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:40)
-==============Server debug=============
-==============Unity debug==============
-[22-05-2025 19:35:52] Volume = 1,870012
-
-UnityEngine.Debug:Log (object)
-MicrophoneListener:Update () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:108)
-==============Server debug=============
-==============Unity debug==============
-[22-05-2025 19:35:54] C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record6.wav
-
-UnityEngine.Debug:Log (object)
-SavWav:Save (string,UnityEngine.AudioClip) (at Assets/Scripts/MicrophoneScripts/SavWav.cs:43)
-MicrophoneListener:SaveAudioClip () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:148)
-MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:140)
-UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
-==============Server debug=============
-==============Unity debug==============
-[22-05-2025 19:35:54] Отправлены данные: C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record6.wav
-
-UnityEngine.Debug:Log (object)
-Client:SendAudioPathToPython (string) (at Assets/Scripts/ServerScripts/Client.cs:74)
-MicrophoneListener:SaveAudioClip () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:149)
-MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:140)
-UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
-==============Server debug=============
-==============Unity debug==============
-[22-05-2025 19:35:55] Result: и то же самое выгрел меня сейчас му 
-
-UnityEngine.Debug:Log (object)
-Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:37)
-==============Server debug=============
-==============Unity debug==============
-[22-05-2025 19:35:55] Команда не найдена
-
-UnityEngine.Debug:Log (object)
-CommandManager:procedureText (string) (at Assets/Scripts/MicrophoneScripts/CommandManager.cs:75)
-Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:38)
-==============Server debug=============
-==============Unity debug==============
-[22-05-2025 19:35:55] circleStopped
-
-UnityEngine.Debug:Log (object)
-WaitCircle:stopWaitCircle () (at Assets/Scripts/GUI Things/WaitCircle.cs:49)
-Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:40)
-==============Server debug=============
-==============Unity debug==============
-[22-05-2025 19:35:55] Volume = 1,401234
-
-UnityEngine.Debug:Log (object)
-MicrophoneListener:Update () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:108)
-==============Server debug=============
-==============Unity debug==============
-[22-05-2025 19:35:57] C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record7.wav
-
-UnityEngine.Debug:Log (object)
-SavWav:Save (string,UnityEngine.AudioClip) (at Assets/Scripts/MicrophoneScripts/SavWav.cs:43)
-MicrophoneListener:SaveAudioClip () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:148)
-MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:140)
-UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
-==============Server debug=============
-==============Unity debug==============
-[22-05-2025 19:35:57] Отправлены данные: C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record7.wav
-
-UnityEngine.Debug:Log (object)
-Client:SendAudioPathToPython (string) (at Assets/Scripts/ServerScripts/Client.cs:74)
-MicrophoneListener:SaveAudioClip () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:149)
-MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:140)
-UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
-==============Server debug=============
-==============Unity debug==============
-[22-05-2025 19:35:58] Result: я за эду гругру покажу 
-
-UnityEngine.Debug:Log (object)
-Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:37)
-==============Server debug=============
-==============Unity debug==============
-[22-05-2025 19:35:58] Команда не найдена
-
-UnityEngine.Debug:Log (object)
-CommandManager:procedureText (string) (at Assets/Scripts/MicrophoneScripts/CommandManager.cs:75)
-Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:38)
-==============Server debug=============
-==============Unity debug==============
-[22-05-2025 19:35:58] circleStopped
-
-UnityEngine.Debug:Log (object)
-WaitCircle:stopWaitCircle () (at Assets/Scripts/GUI Things/WaitCircle.cs:49)
-Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:40)
-==============Server debug=============
-==============Unity debug==============
-[22-05-2025 19:36:00] Volume = 1,556921
-
-UnityEngine.Debug:Log (object)
-MicrophoneListener:Update () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:108)
-==============Server debug=============
-==============Unity debug==============
-[22-05-2025 19:36:02] C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record8.wav
-
-UnityEngine.Debug:Log (object)
-SavWav:Save (string,UnityEngine.AudioClip) (at Assets/Scripts/MicrophoneScripts/SavWav.cs:43)
-MicrophoneListener:SaveAudioClip () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:148)
-MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:140)
-UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
-==============Server debug=============
-==============Unity debug==============
-[22-05-2025 19:36:02] Отправлены данные: C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record8.wav
-
-UnityEngine.Debug:Log (object)
-Client:SendAudioPathToPython (string) (at Assets/Scripts/ServerScripts/Client.cs:74)
-MicrophoneListener:SaveAudioClip () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:149)
-MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:140)
-UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
-==============Server debug=============
-==============Unity debug==============
-[22-05-2025 19:36:03] Result: активаци 
-
-UnityEngine.Debug:Log (object)
-Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:37)
-==============Server debug=============
-==============Unity debug==============
-[22-05-2025 19:36:03] Команда не найдена
-
-UnityEngine.Debug:Log (object)
-CommandManager:procedureText (string) (at Assets/Scripts/MicrophoneScripts/CommandManager.cs:75)
-Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:38)
-==============Server debug=============
-==============Unity debug==============
-[22-05-2025 19:36:03] circleStopped
-
-UnityEngine.Debug:Log (object)
-WaitCircle:stopWaitCircle () (at Assets/Scripts/GUI Things/WaitCircle.cs:49)
-Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:40)
-==============Server debug=============
-==============Unity debug==============
-[22-05-2025 19:36:04] Volume = 2,828693
-
-UnityEngine.Debug:Log (object)
-MicrophoneListener:Update () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:108)
-==============Server debug=============
-==============Unity debug==============
-[22-05-2025 19:36:06] C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record9.wav
-
-UnityEngine.Debug:Log (object)
-SavWav:Save (string,UnityEngine.AudioClip) (at Assets/Scripts/MicrophoneScripts/SavWav.cs:43)
-MicrophoneListener:SaveAudioClip () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:148)
-MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:140)
-UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
-==============Server debug=============
-==============Unity debug==============
-[22-05-2025 19:36:06] Отправлены данные: C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record9.wav
-
-UnityEngine.Debug:Log (object)
-Client:SendAudioPathToPython (string) (at Assets/Scripts/ServerScripts/Client.cs:74)
-MicrophoneListener:SaveAudioClip () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:149)
-MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:140)
-UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
-==============Server debug=============
-==============Unity debug==============
-[22-05-2025 19:36:07] Result: а привет 
-
-UnityEngine.Debug:Log (object)
-Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:37)
-==============Server debug=============
-==============Unity debug==============
-[22-05-2025 19:36:07] circleStopped
-
-UnityEngine.Debug:Log (object)
-WaitCircle:stopWaitCircle () (at Assets/Scripts/GUI Things/WaitCircle.cs:49)
-Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:40)
-==============Server debug=============
-==============Unity debug==============
-[22-05-2025 19:36:12] Paused
+[20-05-2025 23:35:13] Paused
 
 UnityEngine.Debug:Log (object)
 PlayerMovement:pressEscape () (at Assets/Scripts/Player/PlayerMovement.cs:251)
-PlayerMovement:Move () (at Assets/Scripts/Player/PlayerMovement.cs:87)
-PlayerMovement:Update () (at Assets/Scripts/Player/PlayerMovement.cs:50)
+UnityEngine.Events.UnityEvent:Invoke ()
+CommandManager:procedureText (string) (at Assets/Scripts/MicrophoneScripts/CommandManager.cs:71)
+Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:38)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:36:13] Volume = 2,743387
+[20-05-2025 23:35:13] circleStopped
+
+UnityEngine.Debug:Log (object)
+WaitCircle:stopWaitCircle () (at Assets/Scripts/GUI Things/WaitCircle.cs:49)
+Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:40)
+==============Server debug=============
+==============Unity debug==============
+[20-05-2025 23:35:14] Volume = 2,178526
 
 UnityEngine.Debug:Log (object)
 MicrophoneListener:Update () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:108)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:36:15] C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record10.wav
+[20-05-2025 23:35:16] C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record5.wav
 
 UnityEngine.Debug:Log (object)
 SavWav:Save (string,UnityEngine.AudioClip) (at Assets/Scripts/MicrophoneScripts/SavWav.cs:43)
@@ -455,7 +229,7 @@ MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScr
 UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:36:15] Отправлены данные: C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record10.wav
+[20-05-2025 23:35:16] Отправлены данные: C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record5.wav
 
 UnityEngine.Debug:Log (object)
 Client:SendAudioPathToPython (string) (at Assets/Scripts/ServerScripts/Client.cs:74)
@@ -464,33 +238,26 @@ MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScr
 UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:36:16] Result: ну без команд я просто зайду покажу 
+[20-05-2025 23:35:17] Result: настройте 
 
 UnityEngine.Debug:Log (object)
 Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:37)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:36:16] Команда не найдена
-
-UnityEngine.Debug:Log (object)
-CommandManager:procedureText (string) (at Assets/Scripts/MicrophoneScripts/CommandManager.cs:75)
-Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:38)
-==============Server debug=============
-==============Unity debug==============
-[22-05-2025 19:36:16] circleStopped
+[20-05-2025 23:35:17] circleStopped
 
 UnityEngine.Debug:Log (object)
 WaitCircle:stopWaitCircle () (at Assets/Scripts/GUI Things/WaitCircle.cs:49)
 Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:40)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:36:18] Volume = 1,55592
+[20-05-2025 23:35:21] Volume = 1,548195
 
 UnityEngine.Debug:Log (object)
 MicrophoneListener:Update () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:108)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:36:20] C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record11.wav
+[20-05-2025 23:35:23] C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record6.wav
 
 UnityEngine.Debug:Log (object)
 SavWav:Save (string,UnityEngine.AudioClip) (at Assets/Scripts/MicrophoneScripts/SavWav.cs:43)
@@ -499,7 +266,7 @@ MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScr
 UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:36:20] Отправлены данные: C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record11.wav
+[20-05-2025 23:35:23] Отправлены данные: C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record6.wav
 
 UnityEngine.Debug:Log (object)
 Client:SendAudioPathToPython (string) (at Assets/Scripts/ServerScripts/Client.cs:74)
@@ -508,33 +275,26 @@ MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScr
 UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:36:21] Result: ил ранше проста удебо я вбыр 
+[20-05-2025 23:35:24] Result: вниз 
 
 UnityEngine.Debug:Log (object)
 Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:37)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:36:21] Команда не найдена
-
-UnityEngine.Debug:Log (object)
-CommandManager:procedureText (string) (at Assets/Scripts/MicrophoneScripts/CommandManager.cs:75)
-Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:38)
-==============Server debug=============
-==============Unity debug==============
-[22-05-2025 19:36:21] circleStopped
+[20-05-2025 23:35:24] circleStopped
 
 UnityEngine.Debug:Log (object)
 WaitCircle:stopWaitCircle () (at Assets/Scripts/GUI Things/WaitCircle.cs:49)
 Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:40)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:36:23] Volume = 1,40729
+[20-05-2025 23:35:25] Volume = 2,027512
 
 UnityEngine.Debug:Log (object)
 MicrophoneListener:Update () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:108)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:36:25] C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record12.wav
+[20-05-2025 23:35:27] C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record7.wav
 
 UnityEngine.Debug:Log (object)
 SavWav:Save (string,UnityEngine.AudioClip) (at Assets/Scripts/MicrophoneScripts/SavWav.cs:43)
@@ -543,7 +303,7 @@ MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScr
 UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:36:25] Отправлены данные: C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record12.wav
+[20-05-2025 23:35:27] Отправлены данные: C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record7.wav
 
 UnityEngine.Debug:Log (object)
 Client:SendAudioPathToPython (string) (at Assets/Scripts/ServerScripts/Client.cs:74)
@@ -552,33 +312,26 @@ MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScr
 UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:36:26] Result: вот браньцу был толькау дего теперь паднеком большомс деся 
+[20-05-2025 23:35:28] Result: акправо 
 
 UnityEngine.Debug:Log (object)
 Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:37)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:36:26] Команда не найдена
-
-UnityEngine.Debug:Log (object)
-CommandManager:procedureText (string) (at Assets/Scripts/MicrophoneScripts/CommandManager.cs:75)
-Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:38)
-==============Server debug=============
-==============Unity debug==============
-[22-05-2025 19:36:26] circleStopped
+[20-05-2025 23:35:28] circleStopped
 
 UnityEngine.Debug:Log (object)
 WaitCircle:stopWaitCircle () (at Assets/Scripts/GUI Things/WaitCircle.cs:49)
 Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:40)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:36:26] Volume = 1,493626
+[20-05-2025 23:35:32] Volume = 2,645302
 
 UnityEngine.Debug:Log (object)
 MicrophoneListener:Update () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:108)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:36:28] C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record13.wav
+[20-05-2025 23:35:34] C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record8.wav
 
 UnityEngine.Debug:Log (object)
 SavWav:Save (string,UnityEngine.AudioClip) (at Assets/Scripts/MicrophoneScripts/SavWav.cs:43)
@@ -587,7 +340,7 @@ MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScr
 UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:36:28] Отправлены данные: C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record13.wav
+[20-05-2025 23:35:34] Отправлены данные: C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record8.wav
 
 UnityEngine.Debug:Log (object)
 Client:SendAudioPathToPython (string) (at Assets/Scripts/ServerScripts/Client.cs:74)
@@ -596,43 +349,296 @@ MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScr
 UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:36:29] Result: торе также можно меня ти чествутельность 
+[20-05-2025 23:35:35] Result: справа 
 
 UnityEngine.Debug:Log (object)
 Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:37)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:36:29] Команда не найдена
-
-UnityEngine.Debug:Log (object)
-CommandManager:procedureText (string) (at Assets/Scripts/MicrophoneScripts/CommandManager.cs:75)
-Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:38)
-==============Server debug=============
-==============Unity debug==============
-[22-05-2025 19:36:29] circleStopped
+[20-05-2025 23:35:35] circleStopped
 
 UnityEngine.Debug:Log (object)
 WaitCircle:stopWaitCircle () (at Assets/Scripts/GUI Things/WaitCircle.cs:49)
 Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:40)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:36:31] Отправлены данные: stop
+[20-05-2025 23:35:38] Volume = 1,865435
+
+UnityEngine.Debug:Log (object)
+MicrophoneListener:Update () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:108)
+==============Server debug=============
+==============Unity debug==============
+[20-05-2025 23:35:40] C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record9.wav
+
+UnityEngine.Debug:Log (object)
+SavWav:Save (string,UnityEngine.AudioClip) (at Assets/Scripts/MicrophoneScripts/SavWav.cs:43)
+MicrophoneListener:SaveAudioClip () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:148)
+MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:140)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
+==============Server debug=============
+==============Unity debug==============
+[20-05-2025 23:35:40] Отправлены данные: C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record9.wav
+
+UnityEngine.Debug:Log (object)
+Client:SendAudioPathToPython (string) (at Assets/Scripts/ServerScripts/Client.cs:74)
+MicrophoneListener:SaveAudioClip () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:149)
+MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:140)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
+==============Server debug=============
+==============Unity debug==============
+[20-05-2025 23:35:41] Result: влево 
+
+UnityEngine.Debug:Log (object)
+Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:37)
+==============Server debug=============
+==============Unity debug==============
+[20-05-2025 23:35:41] circleStopped
+
+UnityEngine.Debug:Log (object)
+WaitCircle:stopWaitCircle () (at Assets/Scripts/GUI Things/WaitCircle.cs:49)
+Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:40)
+==============Server debug=============
+==============Unity debug==============
+[20-05-2025 23:35:43] Volume = 1,665306
+
+UnityEngine.Debug:Log (object)
+MicrophoneListener:Update () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:108)
+==============Server debug=============
+==============Unity debug==============
+[20-05-2025 23:35:45] C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record10.wav
+
+UnityEngine.Debug:Log (object)
+SavWav:Save (string,UnityEngine.AudioClip) (at Assets/Scripts/MicrophoneScripts/SavWav.cs:43)
+MicrophoneListener:SaveAudioClip () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:148)
+MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:140)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
+==============Server debug=============
+==============Unity debug==============
+[20-05-2025 23:35:45] Отправлены данные: C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record10.wav
+
+UnityEngine.Debug:Log (object)
+Client:SendAudioPathToPython (string) (at Assets/Scripts/ServerScripts/Client.cs:74)
+MicrophoneListener:SaveAudioClip () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:149)
+MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:140)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
+==============Server debug=============
+==============Unity debug==============
+[20-05-2025 23:35:46] Result: наво 
+
+UnityEngine.Debug:Log (object)
+Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:37)
+==============Server debug=============
+==============Unity debug==============
+[20-05-2025 23:35:46] Команда не найдена
+
+UnityEngine.Debug:Log (object)
+CommandManager:procedureText (string) (at Assets/Scripts/MicrophoneScripts/CommandManager.cs:75)
+Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:38)
+==============Server debug=============
+==============Unity debug==============
+[20-05-2025 23:35:46] circleStopped
+
+UnityEngine.Debug:Log (object)
+WaitCircle:stopWaitCircle () (at Assets/Scripts/GUI Things/WaitCircle.cs:49)
+Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:40)
+==============Server debug=============
+==============Unity debug==============
+[20-05-2025 23:35:48] Volume = 2,193403
+
+UnityEngine.Debug:Log (object)
+MicrophoneListener:Update () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:108)
+==============Server debug=============
+==============Unity debug==============
+[20-05-2025 23:35:50] C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record11.wav
+
+UnityEngine.Debug:Log (object)
+SavWav:Save (string,UnityEngine.AudioClip) (at Assets/Scripts/MicrophoneScripts/SavWav.cs:43)
+MicrophoneListener:SaveAudioClip () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:148)
+MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:140)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
+==============Server debug=============
+==============Unity debug==============
+[20-05-2025 23:35:50] Отправлены данные: C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record11.wav
+
+UnityEngine.Debug:Log (object)
+Client:SendAudioPathToPython (string) (at Assets/Scripts/ServerScripts/Client.cs:74)
+MicrophoneListener:SaveAudioClip () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:149)
+MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:140)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
+==============Server debug=============
+==============Unity debug==============
+[20-05-2025 23:35:51] Result: а 
+
+UnityEngine.Debug:Log (object)
+Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:37)
+==============Server debug=============
+==============Unity debug==============
+[20-05-2025 23:35:51] Команда не найдена
+
+UnityEngine.Debug:Log (object)
+CommandManager:procedureText (string) (at Assets/Scripts/MicrophoneScripts/CommandManager.cs:75)
+Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:38)
+==============Server debug=============
+==============Unity debug==============
+[20-05-2025 23:35:51] circleStopped
+
+UnityEngine.Debug:Log (object)
+WaitCircle:stopWaitCircle () (at Assets/Scripts/GUI Things/WaitCircle.cs:49)
+Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:40)
+==============Server debug=============
+==============Unity debug==============
+[20-05-2025 23:35:52] Volume = 1,798391
+
+UnityEngine.Debug:Log (object)
+MicrophoneListener:Update () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:108)
+==============Server debug=============
+==============Unity debug==============
+[20-05-2025 23:35:54] C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record12.wav
+
+UnityEngine.Debug:Log (object)
+SavWav:Save (string,UnityEngine.AudioClip) (at Assets/Scripts/MicrophoneScripts/SavWav.cs:43)
+MicrophoneListener:SaveAudioClip () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:148)
+MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:140)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
+==============Server debug=============
+==============Unity debug==============
+[20-05-2025 23:35:54] Отправлены данные: C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record12.wav
+
+UnityEngine.Debug:Log (object)
+Client:SendAudioPathToPython (string) (at Assets/Scripts/ServerScripts/Client.cs:74)
+MicrophoneListener:SaveAudioClip () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:149)
+MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:140)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
+==============Server debug=============
+==============Unity debug==============
+[20-05-2025 23:35:55] Result: низ 
+
+UnityEngine.Debug:Log (object)
+Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:37)
+==============Server debug=============
+==============Unity debug==============
+[20-05-2025 23:35:55] circleStopped
+
+UnityEngine.Debug:Log (object)
+WaitCircle:stopWaitCircle () (at Assets/Scripts/GUI Things/WaitCircle.cs:49)
+Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:40)
+==============Server debug=============
+==============Unity debug==============
+[20-05-2025 23:35:56] Volume = 2,054977
+
+UnityEngine.Debug:Log (object)
+MicrophoneListener:Update () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:108)
+==============Server debug=============
+==============Unity debug==============
+[20-05-2025 23:35:58] C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record13.wav
+
+UnityEngine.Debug:Log (object)
+SavWav:Save (string,UnityEngine.AudioClip) (at Assets/Scripts/MicrophoneScripts/SavWav.cs:43)
+MicrophoneListener:SaveAudioClip () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:148)
+MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:140)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
+==============Server debug=============
+==============Unity debug==============
+[20-05-2025 23:35:58] Отправлены данные: C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record13.wav
+
+UnityEngine.Debug:Log (object)
+Client:SendAudioPathToPython (string) (at Assets/Scripts/ServerScripts/Client.cs:74)
+MicrophoneListener:SaveAudioClip () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:149)
+MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:140)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
+==============Server debug=============
+==============Unity debug==============
+[20-05-2025 23:35:59] Result: право 
+
+UnityEngine.Debug:Log (object)
+Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:37)
+==============Server debug=============
+==============Unity debug==============
+[20-05-2025 23:35:59] circleStopped
+
+UnityEngine.Debug:Log (object)
+WaitCircle:stopWaitCircle () (at Assets/Scripts/GUI Things/WaitCircle.cs:49)
+Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:40)
+==============Server debug=============
+==============Unity debug==============
+[20-05-2025 23:36:00] Volume = 2,173982
+
+UnityEngine.Debug:Log (object)
+MicrophoneListener:Update () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:108)
+==============Server debug=============
+==============Unity debug==============
+[20-05-2025 23:36:02] C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record14.wav
+
+UnityEngine.Debug:Log (object)
+SavWav:Save (string,UnityEngine.AudioClip) (at Assets/Scripts/MicrophoneScripts/SavWav.cs:43)
+MicrophoneListener:SaveAudioClip () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:148)
+MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:140)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
+==============Server debug=============
+==============Unity debug==============
+[20-05-2025 23:36:02] Отправлены данные: C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record14.wav
+
+UnityEngine.Debug:Log (object)
+Client:SendAudioPathToPython (string) (at Assets/Scripts/ServerScripts/Client.cs:74)
+MicrophoneListener:SaveAudioClip () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:149)
+MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:140)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
+==============Server debug=============
+==============Unity debug==============
+[20-05-2025 23:36:03] Result: право 
+
+UnityEngine.Debug:Log (object)
+Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:37)
+==============Server debug=============
+==============Unity debug==============
+[20-05-2025 23:36:03] circleStopped
+
+UnityEngine.Debug:Log (object)
+WaitCircle:stopWaitCircle () (at Assets/Scripts/GUI Things/WaitCircle.cs:49)
+Client:Update () (at Assets/Scripts/ServerScripts/Client.cs:40)
+==============Server debug=============
+==============Unity debug==============
+[20-05-2025 23:36:13] Volume = 1,784477
+
+UnityEngine.Debug:Log (object)
+MicrophoneListener:Update () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:108)
+==============Server debug=============
+==============Unity debug==============
+[20-05-2025 23:36:15] C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record15.wav
+
+UnityEngine.Debug:Log (object)
+SavWav:Save (string,UnityEngine.AudioClip) (at Assets/Scripts/MicrophoneScripts/SavWav.cs:43)
+MicrophoneListener:SaveAudioClip () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:148)
+MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:140)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
+==============Server debug=============
+==============Unity debug==============
+[20-05-2025 23:36:15] Отправлены данные: C:/Users/mrdim/AppData/LocalLow/DefaultCompany/Heartless Maze\Audio\record15.wav
+
+UnityEngine.Debug:Log (object)
+Client:SendAudioPathToPython (string) (at Assets/Scripts/ServerScripts/Client.cs:74)
+MicrophoneListener:SaveAudioClip () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:149)
+MicrophoneListener/<Listening>d__24:MoveNext () (at Assets/Scripts/MicrophoneScripts/MicrophoneListener.cs:140)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
+==============Server debug=============
+==============Unity debug==============
+[20-05-2025 23:36:15] Отправлены данные: stop
 
 UnityEngine.Debug:Log (object)
 Client:SendAudioPathToPython (string) (at Assets/Scripts/ServerScripts/Client.cs:74)
 Client:OnApplicationQuit () (at Assets/Scripts/ServerScripts/Client.cs:117)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:36:31] Ресурсы клиента освобождены (корректно)
+[20-05-2025 23:36:16] Ресурсы клиента освобождены (корректно)
 
 UnityEngine.Debug:Log (object)
 Client:OnApplicationQuit () (at Assets/Scripts/ServerScripts/Client.cs:138)
 ==============Server debug=============
 ==============Unity debug==============
-[22-05-2025 19:36:31] Работа приложения завершена.
+[20-05-2025 23:36:16] Работа приложения завершена.
 
 UnityEngine.Debug:Log (object)
 Client:OnApplicationQuit () (at Assets/Scripts/ServerScripts/Client.cs:144)
 ==============Server debug=============
-[22-05-2025 19:36:32] Server: Server stopped
-[22-05-2025 19:36:38] Server (error): 
+[20-05-2025 23:36:16] Server: Server stopped
+[20-05-2025 23:36:21] Server (error): 
