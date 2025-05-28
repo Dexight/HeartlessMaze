@@ -1,10 +1,10 @@
 using UnityEditor;
 using UnityEngine;
 
-[UnityEditor.CustomPropertyDrawer(typeof(ReadOnlyProperty))]
-public class ReadOnlyDrawer : UnityEditor.PropertyDrawer
+[CustomPropertyDrawer(typeof(ReadOnlyProperty))]
+public class ReadOnlyDrawer : PropertyDrawer
 {
-    public override void OnGUI(Rect position, UnityEditor.SerializedProperty property, GUIContent label)
+    public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
         GUI.enabled = false; // Отключаем редактирование поля
         EditorGUI.PropertyField(position, property, label, true);

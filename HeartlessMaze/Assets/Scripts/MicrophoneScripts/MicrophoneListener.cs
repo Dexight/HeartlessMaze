@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using TMPro;
 using System.IO;
 using System.Collections;
-using UnityEditor;
 
 public class MicrophoneListener : MonoBehaviour
 {
@@ -23,12 +22,13 @@ public class MicrophoneListener : MonoBehaviour
     [Tooltip("Длина записываемого клипа в секундах.")]
     public int clipDelay = 2;
 
-    [Tooltip("Количество анализируемых сэмплов.")]
+    [Tooltip("Количество анализируемых семплов.")]
     public int sampleWindow = 64;
     
     [Tooltip("Порог громкости.")]
     public float threshold = 0.1f;
 
+    [Tooltip("Чувствительность микрофона.")]
     public float sensibility = 100f;
     #endregion
 
@@ -76,22 +76,22 @@ public class MicrophoneListener : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        client = GetComponent<Client>();
-        tempPath = Path.Combine(Application.persistentDataPath, "Audio");
-        Directory.CreateDirectory(tempPath); // Создаст папку, если её нет
-        Debug.Log("Путь к аудио: " + tempPath);
+        void Start()
+        {
+            client = GetComponent<Client>();
+            tempPath = Path.Combine(Application.persistentDataPath, "Audio");
+            Directory.CreateDirectory(tempPath); // Создаст папку, если её нет
+            Debug.Log("Путь к аудио: " + tempPath);
 
-        if (microphoneIndicator)
-            microphoneIndicator.color = Color.red;
+            if (microphoneIndicator)
+                microphoneIndicator.color = Color.red;
 
-        List<string> microphoneDevices = new(Microphone.devices);
-        selectedMicrophone = Microphone.devices[selectedMicroId];
-        Debug.Log("Выбран микрофон: " + selectedMicrophone);
+            List<string> microphoneDevices = new(Microphone.devices);
+            selectedMicrophone = Microphone.devices[selectedMicroId];
+            Debug.Log("Выбран микрофон: " + selectedMicrophone);
 
-        StartMicrophone();
-    }
+            StartMicrophone();
+        }
 
     void Update()
     {
@@ -239,6 +239,4 @@ public class MicrophoneListener : MonoBehaviour
     }
 }
 
-public class ReadOnlyProperty : PropertyAttribute
-{
-}
+public class ReadOnlyProperty : PropertyAttribute {}
