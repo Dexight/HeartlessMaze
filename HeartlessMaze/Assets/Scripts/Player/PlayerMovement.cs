@@ -87,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
             pressEscape();
         }
 
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
         {
             pressReturn();
         }
@@ -236,14 +236,21 @@ public class PlayerMovement : MonoBehaviour
             {
                 pauseMenu.inSettingMenu = false;
                 settingsMenu.gameObject.SetActive(false);
+
+                settingsMenu.arrows[settingsMenu.currentButtonIndex].gameObject.SetActive(false);
+                settingsMenu.currentButtonIndex = 0;
+                settingsMenu.arrows[0].SetActive(true);
             }
             else
             {
                 Debug.Log("Not paused");
                 pauseMenu.gameObject.SetActive(false);
                 pauseButton.SetActive(true);
-                pauseMenu.currentButtonIndex = 0;
                 _isPaused = false;
+
+                pauseMenu.arrows[pauseMenu.currentButtonIndex].gameObject.SetActive(false);
+                pauseMenu.currentButtonIndex = 0;
+                pauseMenu.arrows[0].SetActive(true);
             }
         }
         else

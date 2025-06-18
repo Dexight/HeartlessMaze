@@ -100,7 +100,7 @@ def start_server():
                     stop_event.set()
                     break
                 client_sock, addr = server.accept()
-                client_handler = threading.Thread(target=handle_client, args=(client_sock))
+                client_handler = threading.Thread(target=handle_client, args=(client_sock,))
                 client_handler.daemon = True # остановится, если завершён основной поток
                 client_handler.start()
             except socket.timeout: # таймаут accept() для проверки флага остановки

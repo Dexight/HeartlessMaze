@@ -72,8 +72,11 @@ public class PauseMenu : MonoBehaviour
 
     public void gotoSettings()
     {
-        inSettingMenu = true;
-        settingsMenu.currentButtonIndex = 0;
-        settingsMenu.gameObject.SetActive(true);
+        if (playerMovement._isPaused)
+        {
+            inSettingMenu = true;
+            settingsMenu.currentButtonIndex = 0;
+            settingsMenu.gameObject.SetActive(true);
+        }
     }
 }
