@@ -7,7 +7,6 @@ public class Server : MonoBehaviour
 {
     private Process _serverProcess;
     private Client client;
-    //[ReadOnlyProperty][SerializeField] private bool serverReadyFlag = false;
     string modelPath = $"{Application.streamingAssetsPath}/model.onnx";
     string vocabPath = $"{Application.streamingAssetsPath}/vocab.json";
     
@@ -57,8 +56,10 @@ public class Server : MonoBehaviour
         };
         _serverProcess.ErrorDataReceived += (sender, args) => {
             if (args.Data != null)
+            {
                 UnityEngine.Debug.LogError($"Server (error): {args.Data}");
                 File.AppendAllText(logsPath, $"[{System.DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss")}] Server (error): {args.Data}\n");
+            }
         };
 
         _serverProcess.Start();
@@ -66,7 +67,7 @@ public class Server : MonoBehaviour
         _serverProcess.BeginOutputReadLine();
         _serverProcess.BeginErrorReadLine();
 
-        InvokeRepeating(nameof(CheckServerStatus), 1f, 5f);// Вызывает функцию каждые 5 секунд (в моём случае пока сервер не поднимется)
+        InvokeRepeating(nameof(CheckServerStatus), 1f, 5f);// Вызывает функцию каждые 5 секунд (в моём случае, пока сервер не поднимется)
     }
 
 

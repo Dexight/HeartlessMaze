@@ -76,22 +76,22 @@ public class MicrophoneListener : MonoBehaviour
         }
     }
 
-        void Start()
-        {
-            client = GetComponent<Client>();
-            tempPath = Path.Combine(Application.persistentDataPath, "Audio");
-            Directory.CreateDirectory(tempPath); // Создаст папку, если её нет
-            Debug.Log("Путь к аудио: " + tempPath);
+    void Start()
+    {
+        client = GetComponent<Client>();
+        tempPath = Path.Combine(Application.persistentDataPath, "Audio");
+        Directory.CreateDirectory(tempPath); // Создаст папку, если её нет
+        Debug.Log("Путь к аудио: " + tempPath);
 
-            if (microphoneIndicator)
-                microphoneIndicator.color = Color.red;
+        if (microphoneIndicator)
+            microphoneIndicator.color = Color.red;
 
-            List<string> microphoneDevices = new(Microphone.devices);
-            selectedMicrophone = Microphone.devices[selectedMicroId];
-            Debug.Log("Выбран микрофон: " + selectedMicrophone);
+        List<string> microphoneDevices = new(Microphone.devices);
+        selectedMicrophone = Microphone.devices[selectedMicroId];
+        Debug.Log("Выбран микрофон: " + selectedMicrophone);
 
-            StartMicrophone();
-        }
+        StartMicrophone();
+    }
 
     void Update()
     {

@@ -75,7 +75,7 @@ def start_server():
                 print("Token vocabular file exists and can be readed", flush=True)
                 vocab = json.load(vfile)
                 idx_to_token = {int(idx): token for token, idx in vocab.items()} # index -> token
-                print("model was loaded succesfuly", flush=True)
+                print("Token vocabular was loaded succesfuly", flush=True)
 
             server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             server.bind(("127.0.0.1", 12345))  # Адрес и порт сервера
@@ -100,8 +100,8 @@ def start_server():
                     stop_event.set()
                     break
                 client_sock, addr = server.accept()
-                client_handler = threading.Thread(target=handle_client, args=(client_sock,))
-                client_handler.daemon = True # остановится если завершён основной поток
+                client_handler = threading.Thread(target=handle_client, args=(client_sock))
+                client_handler.daemon = True # остановится, если завершён основной поток
                 client_handler.start()
             except socket.timeout: # таймаут accept() для проверки флага остановки
                 continue;
@@ -125,7 +125,6 @@ def prepare_input(audio_path):
 def transcribe_audio_onnx(audio_path):
     inputs = prepare_input(audio_path)
     
-
     ort_inputs = {ort_session.get_inputs()[0].name: inputs}
     ort_outs = ort_session.run(None, ort_inputs)
     

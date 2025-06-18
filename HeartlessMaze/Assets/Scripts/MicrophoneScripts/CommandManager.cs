@@ -68,7 +68,9 @@ public class CommandManager : MonoBehaviour
         Command c = commands.Find(x => input.Contains(x.name));
         if (c != (Command)null)
         {
-            events[c.eventId].Invoke();
+            if (c.eventId >= 0 || c.eventId < events.Count)
+                events[c.eventId].Invoke();
+            else Debug.Log($"Ивент с идентификатором \"{c.eventId}\" не существует");
         }
         else
         {
