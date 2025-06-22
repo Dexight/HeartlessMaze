@@ -4655,7 +4655,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 683725462}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.19405393
+  m_Size: 0.19335262
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5102,11 +5102,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4655877778422411580, guid: 101db1914b74e354c9dc03e8f59753fc, type: 3}
       propertyPath: commands.Array.size
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4655877778422411580, guid: 101db1914b74e354c9dc03e8f59753fc, type: 3}
       propertyPath: commands.Array.data[0].name
-      value: "\u041F\u041F\u0440\u0438\u0432\u0435"
+      value: "\u043F\u0440\u0438\u0432\u0435\u0442"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4655877778422411580, guid: 101db1914b74e354c9dc03e8f59753fc, type: 3}
+      propertyPath: commands.Array.data[1].name
+      value: "\u043F\u0440\u0438\u043D\u0435\u0442"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4655877778422411580, guid: 101db1914b74e354c9dc03e8f59753fc, type: 3}
+      propertyPath: commands.Array.data[2].name
+      value: "\u043F\u0440\u0438\u043C\u0435\u0442"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4655877778422411580, guid: 101db1914b74e354c9dc03e8f59753fc, type: 3}
+      propertyPath: commands.Array.data[3].name
+      value: "\u043F\u0440\u0438\u043B\u0435\u0442"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4655877778422411580, guid: 101db1914b74e354c9dc03e8f59753fc, type: 3}
+      propertyPath: commands.Array.data[4].name
+      value: "\u043F\u0440\u0438\u0444\u0435\u0442"
       objectReference: {fileID: 0}
     - target: {fileID: 4655877778422411580, guid: 101db1914b74e354c9dc03e8f59753fc, type: 3}
       propertyPath: events.Array.data[0].m_PersistentCalls.m_Calls.Array.size

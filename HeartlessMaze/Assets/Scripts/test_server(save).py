@@ -57,7 +57,7 @@ def handle_client(client_socket):
 def start_server():
     global server, stop_event, ort_session, idx_to_token, client_connected
     try:
-        #Debug проверка существования model файла
+        # Debug проверка существования model файла
         try:
             with open(model_path, 'r') as mfile:
                 print("Model file exists and can be readed", flush=True)
@@ -66,10 +66,10 @@ def start_server():
         except PermissionError:
             print("Problems with permissions to read model file. Path: " + model_path, flush=True)
 
-        ort_session = onnxruntime.InferenceSession(model_path)#Загрузка модели
+        ort_session = onnxruntime.InferenceSession(model_path)# Загрузка модели
         print("model was loaded succesfuly")
 
-        #Debug проверка существования vocabular файла
+        # Debug проверка существования vocabular файла
         try:
             with open(vocab_path, 'r') as vfile:
                 print("Token vocabular file exists and can be readed", flush=True)
@@ -80,7 +80,7 @@ def start_server():
             server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             server.bind(("127.0.0.1", 12345))  # Адрес и порт сервера
             server.listen(1)
-            server.settimeout(1)# Таймаут для проверки stop_event
+            server.settimeout(1) # Таймаут для проверки stop_event
 
             with open(flag_path, 'w') as f:
                 f.write('Флаг создан')
@@ -118,7 +118,7 @@ def start_server():
     
 def prepare_input(audio_path):
     audio, sr = librosa.load(audio_path, sr=16000)  # Частота дискретизации 16 кГц
-    audio = audio / np.max(np.abs(audio))# Нормализация
+    audio = audio / np.max(np.abs(audio)) # Нормализация
     inputs = np.expand_dims(audio, axis=0).astype(np.float32) # Преобразование аудио в формат, который ожидает модель
     return inputs
 
